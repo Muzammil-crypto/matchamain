@@ -64,8 +64,8 @@ export const questions= [
       "select": "Select one",
       "type": "option",
       "options": [
-        { "id": "0", "name": "Important" },
-        { "id": "1", "name": "Not Important" }
+        { "value": "0", "label": "Important" },
+        { "value": "1", "label": "Not Important" }
       ],
       "required": true
     },
@@ -75,8 +75,8 @@ export const questions= [
       "select": "Select one",
       "type": "option",
       "options": [
-        { "id": "0", "name": "Yes" },
-        { "id": "1", "name": "No" }
+        { "value": "0", "label": "Yes" },
+        { "value": "1", "label": "No" }
       ],
       "required": true,
       "child": true,
@@ -85,12 +85,13 @@ export const questions= [
         "question": "Who is your insurance provider?",
         "type": "select",
         "select": "Select one",
-        "options": [
-          { "id": "0", "name": "Aetna" },
-          { "id": "1", "name": "Affinity Health Plan" },
-          { "id": "2", "name": "Anthem BIBS" },
-          { "id": "3", "name": "Blue Cross Blue Shield" },
-          { "id": "4", "name": "Ethnic Health Care" }
+        options: [
+        { value: "mujahid", label: "Mujahid" },
+        { value: "mzamil", label: "Mzamil" },
+        { value: "MLamil", label: "Mzamil" },
+        { value: "Mail", label: "Mzamil" },
+        { value: "Mza", label: "Mzamil" },
+        { value: "mil", label: "MzamilMzamil" },
         ],
         "required": "true"
       }

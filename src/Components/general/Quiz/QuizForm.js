@@ -50,11 +50,12 @@ export const QuizForm = () => {
               }
               else if(item.type === "select"){
                return <div key= {val}>
-                  <CustomSelect
+              <CustomSelect
               label="Job Type"
               name="option"
               type="text"
               placeholder="Select The Job Type"
+              
             >
               {item.options.map((item, val) => (
                 
