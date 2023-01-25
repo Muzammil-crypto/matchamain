@@ -32,9 +32,12 @@ export const QuizForm = () => {
         }}    >
         {({ errors, touched }) => (
           <Form>
-            {questions.map((item, val) => (
-              ( item.type === "option") ? 
-              ( <><QuestionHeading key={val} text={item.question}/>
+            <div className="flex flex-col align-middle justify-center items-center	 w-screen  ">
+            {questions.map((item, val) => {
+              if(item.type === "option"){
+
+               return <div className="w-96" key={val}>
+                <QuestionHeading key={val} text={item.question}/>
               
               <SingleSelect
               label={
@@ -43,12 +46,56 @@ export const QuizForm = () => {
               options={item.options}
               name="mcq"
             />
-              </>)
-               
-               
-               :
-               item.type==="select"? "HELLO": item.type==="mcq"? "LIKERT" : item.type==="multi"? "multi ana": item.type==="input"? "AHHAHAHAH": "nothing"
-            ))}
+              </div>
+              }
+              else if(item.type === "select"){
+               return <div key= {val}>
+                  <CustomSelect
+              label="Job Type"
+              name="option"
+              type="text"
+              placeholder="Select The Job Type"
+            >
+              {item.options.map((item, val) => (
+                
+                <option  className=" bg-white text-white" key={val} value={item.value}>
+                  {item.label}
+                </option>
+              ))}
+            </CustomSelect>
+                </div>
+              }
+              else if(item.type === "mcq"){
+                return <div key={val}>
+                <QuestionHeading key={val} text={item.question}/>
+                  </div>
+              }
+              else if(item.type === "multi"){
+                return <div key={val}>
+                <QuestionHeading key={val} text={item.question}/>
+                <MultiSelect
+                label={"Select any"}
+                choices={item?.options}
+                displayValue={"name"}
+                name="multi"
+                />
+                </div>
+              }
+              else if(item.type === "input"){
+                return <div key={val}>
+                <QuestionHeading key={val} text={item.question}/>
+                <CustomInputField
+              label="email"
+              name="email"
+              type="text"
+              placeholder="name@email.com"
+            />
+                </div>
+              }
+
+              
+          
+})}
 
 
 
@@ -117,6 +164,7 @@ export const QuizForm = () => {
               </div>
             </div>
             </div> */}
+            </div>
           </Form>
         )}
       </Formik>

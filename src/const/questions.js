@@ -332,13 +332,12 @@ export const questions= [
       "select": "Select one",
       "type": "multi",
       "placeholder": "Select State",
-      "options": [
-        { "id": "0", "label": "Florida", "value": "Florida" },
-        { "id": "1", "label": "California", "value": "California" },
-        { "id": "2", "label": "Alaska", "value": "Alaska" },
-        { "id": "3", "label": "Texas", "value": "Texas" },
-        { "id": "4", "label": "Ohio", "value": "Ohio" },
-        { "id": "5", "label": "Hawaii", "value": "Hawaii" }
+      options : [
+
+        { name: "multiselect-ract-dropdo", id: 0 },
+        { name: "multiselect-reropdo", id: 1 },
+        { name: "multiselecteact-dropdo", id: 2 },
+        { name: "multi-react-dropdo", id: 3 },
       ],
       "required": true
     }
