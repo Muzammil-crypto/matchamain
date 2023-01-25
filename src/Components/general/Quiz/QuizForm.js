@@ -9,6 +9,9 @@ import { SingleSelect } from "../SingleSelect/SingleSelect";
 import { Heading } from "./Headings/Heading";
 import FormSchema from "../../../Formik/Schema/InputFieldSchema";
 import { myOpt, options, radio, scaleDigit } from "../../../const/texts";
+import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from 'react-icons/md';
+import { questions } from "../../../const/questions";
+import { QuestionHeading } from "./Headings/QuestionHeading";
 
 export const QuizForm = () => {
   
@@ -29,7 +32,32 @@ export const QuizForm = () => {
         }}    >
         {({ errors, touched }) => (
           <Form>
-              <Heading
+            {questions.map((item, val) => (
+              ( item.type === "option") ? 
+              ( <><QuestionHeading key={val} text={item.question}/>
+              
+              <SingleSelect
+              label={
+               item.select
+              }
+              options={item.options}
+              name="mcq"
+            />
+              </>)
+               
+               
+               :
+               item.type==="select"? "HELLO": item.type==="mcq"? "LIKERT" : item.type==="multi"? "multi ana": item.type==="input"? "AHHAHAHAH": "nothing"
+            ))}
+
+
+
+
+
+
+
+
+              {/* <Heading
              
             />
 
@@ -57,7 +85,8 @@ export const QuizForm = () => {
               placeholder="Select The Job Type"
             >
               {myOpt.map((item, val) => (
-                <option className="text-error" key={val} value={item.value}>
+                
+                <option  className=" bg-white text-white" key={val} value={item.value}>
                   {item.label}
                 </option>
               ))}
@@ -79,8 +108,15 @@ export const QuizForm = () => {
               options={radio}
               name="mcq"
             />
-            <br />
+            <div className="flex flex-row">
             <ButtonT  type="submit"  text={"Next"} />
+            <div className="flex flex-row">
+              <div className="flex flex-row items-center justify-center ml-96 pl-96">
+              <MdOutlineKeyboardArrowDown color="white" size={40}  className=" color-white bg-button w-8 mr-1 " />
+              <MdOutlineKeyboardArrowUp color="white" size={40}  className=" color-white bg-button w-8" />
+              </div>
+            </div>
+            </div> */}
           </Form>
         )}
       </Formik>
