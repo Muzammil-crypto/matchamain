@@ -1,39 +1,41 @@
-import { useField } from "formik";
 import Multiselect from "multiselect-react-dropdown";
-import React from "react";
+import React, { useState } from "react";
 import { useFormikContext, ErrorMessage } from "formik";
+import { QuestionHeading } from "../Quiz/Headings/QuestionHeading";
 
 export const MultiSelect = ({ name, label, choices, ...props }) => {
   const { setFieldValue, setFieldTouched, errors } = useFormikContext();
-  const [field, meta] = useField(props);
+  const [selectedOptions, setSelectedOptions] = useState();
 
-  const handleChange = (options) => {
-    debugger;
+  
+  function handleSelect(data) {
+    setSelectedOptions(data);
     setFieldTouched(name, true);
-    var opt = [];
-    for (let i = 0; i < options.length; i++) {
-      opt.push({ name: options[i].name });
-    }
-    setFieldValue(name, opt);
-  };
+  setFieldValue(name, selectedOptions);
+  }
 
   return (
-    <div className="w-96">
-      <text className="text-black">{label}</text>
+    
+    <div className="w-96 mb-20">
+  
+  <QuestionHeading text={label} />
+      <p className="text-error">{errors[name]}</p>
+      
+
+      <div 
+        className="bg-gray rounded-non shadow-lg mt-1 py-1 px-1 rounded-lg"
+        >
+
       <Multiselect
-        className="bg-gray rounded-non shadow-lg mt-5 py-2 px-1 rounded-lg"
         {...props}
-        {...field}
+        placeholder={"--Select Any Option--"}
         showCheckbox
         name={name}
         options={choices}
-        // selectedValues={selectedValue}
-        onSelect={handleChange}
-        // onRemove={onRemove}
-        // displayValue={displayValue}
+        onSelect={handleSelect}
+        selectedValues={selectedOptions}
       />
-      <div>{errors[name]}</div>
-      <ErrorMessage name={name} />
+      </div>
     </div>
   );
 };

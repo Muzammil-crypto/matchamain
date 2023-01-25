@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useFormikContext, ErrorMessage } from "formik";
 import { Alphabets } from "../../../const/texts";
+import { QuestionHeading } from "../Quiz/Headings/QuestionHeading";
 
 export const SingleSelect = ({ options, name, label }) => {
   const { setFieldValue, setFieldTouched } = useFormikContext();
-  const [clicked, setClicked] = useState(false);
   const [ listIndex, setListIndex ] = useState({});
 
 
@@ -14,8 +14,11 @@ export const SingleSelect = ({ options, name, label }) => {
   };
 
   return (
-    <div>
-      <label>{label}</label>
+    <div className="w-auto mb-20">
+
+      <QuestionHeading text={label} />
+      <p className="text-error"><ErrorMessage name={name} /></p>
+
       {options.map((_, i) => {
         return (
           <div
@@ -23,13 +26,12 @@ export const SingleSelect = ({ options, name, label }) => {
 
             onClick={(e) => {
               handleChange(e, _.value);
-            setClicked(!clicked);
             setListIndex(i)
 
             
             }}
             className={`mt-2 bg-gray w-96 p-1.5 rounded-lg h-3/4 flex flex-row  align-middle  shadow-lg items-center ${
-              listIndex === i&& clicked && "border border-button"
+              listIndex === i && "border border-button"
             }`}
           >
             <div className="bg-Radio w-12 flex justify-center p-3 rounded-lg shadow-xl  border border-black">
@@ -41,7 +43,6 @@ export const SingleSelect = ({ options, name, label }) => {
           </div>
         );
       })}
-      <ErrorMessage name={name} />
     </div>
   );
 };

@@ -1,42 +1,46 @@
 import { useFormikContext, ErrorMessage } from "formik";
-import Link from "next/link";
 import React, { useState } from "react";
+import { QuestionHeading } from "../Quiz/Headings/QuestionHeading";
 
 
 
 export const LikertScale = ({scaleDigit, name, label}) => {
-  const [clicked, setClicked] = useState(false);
-  const { setFieldValue, setFieldTouched } = useFormikContext();
+  const [ listIndex, setListIndex ] = useState({});
+    const { setFieldValue, setFieldTouched } = useFormikContext();
 
   const handleChange = (evt, value) => {
     setFieldTouched(name, true);
     setFieldValue(name, value);
   };
   return (
-    <>
-    <div className="flex flex-row items-center">
-      <text className="text-button mr-2">Strongly Disagree</text>
+    <div className="w-auto mb-20">
+      <QuestionHeading text={label} />
+    
+    <p className="text-error"><ErrorMessage name={name} /></p>
+
+    <div className="flex flex-row items-center ">
+      <text className="text-button mr-2 ">Strongly Disagree</text>
       {scaleDigit.map((item, val) => (
         <div
           onClick={(e) => {
            
             handleChange(e, item.value);
-            setClicked(!clicked);
+            setListIndex(val)
+
           }}
           key={val}
         >
           <div
             key={val}
-            className="w-20 h-20 text-white rounded-sm border border-blue m-1 flex items-center justify-center bg-button opacity-65 "
+            className={`shadow-xl border border-2 ${'border'? 'border-border':''} w-20 h-20 text-white rounded-sm m-1 flex items-center justify-center bg-bg ${listIndex===val &&  "bg-button"} `}
           >
-            {item.value}
+            <p className={`${listIndex===val?  "text-white": 'text-button'} `}>{item.value}</p>
           </div>
         </div>
       ))}
       <text className="text-button ml-2">Strongly Agree</text>
     </div>
-    <ErrorMessage name={name} />
 
-    </>
+    </div>
   );
 };

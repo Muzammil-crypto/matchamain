@@ -1,4 +1,4 @@
-import { Field, Form, Formik, useField, useFormikContext } from "formik";
+import {Form, Formik } from "formik";
 import React from "react";
 import { ButtonT } from "../../../Quiz/Components/base/Button/ButtonT";
 import { CustomInputField } from "../../base/CustomInput/CustomInputField";
@@ -7,55 +7,11 @@ import { MultiSelect } from "../MultiSelect/MultiSelect";
 import { CustomSelect } from "../Navbar/DropDown/Select";
 import { SingleSelect } from "../SingleSelect/SingleSelect";
 import { Heading } from "./Headings/Heading";
-import { QuestionHeading } from "./Headings/QuestionHeading";
 import FormSchema from "../../../Formik/Schema/InputFieldSchema";
+import { myOpt, options, radio, scaleDigit } from "../../../const/texts";
 
 export const QuizForm = () => {
-  const options = [
-    { name: "Option 1️⃣", id: 1 },
-    { name: "Option 2️⃣", id: 2 },
-  ];const scaleDigit = [
-    {
-      value: "",
-      label: 'Chose one'
-    },
-    {
-      value: 1,
-      label: 'one'
-    },
-    {
-      value: 2,
-      label: 'two'
-    }, {
-      value: 3,
-      label: 'three'
-    }, {
-      value: 4,
-      label: 'four'
-    }, {
-      value: 5,
-      label: 'five'
-    },
-  ];
-  const myOpt = [
-    { value: "", label: "Please Select an Option" },
-    { value: "1960", label: "Mujahid" },
-    { value: "1961", label: "Mzamil" },
-    { value: "1962", label: "Mzamil" },
-    { value: "1963", label: "Mzamil" },
-    { value: "1964", label: "Mzamil" },
-    { value: "1965", label: "MzamilMzamil" },
-  ];
-
-  const radio = [
-    { value: "", label: "Please Select an Option" },
-    { value: "1960", label: "Mujahid" },
-    { value: "1961", label: "Mzamil" },
-    { value: "1962", label: "Mzamil" },
-    { value: "1963", label: "Mzamil" },
-    { value: "1964", label: "Mzamil" },
-    { value: "1965", label: "MzamilMzamil" },
-  ];
+  
 
   return (
     <div className="bg-center align-middle justify-center items-center	 flex flex-col w-screen   ">
@@ -63,32 +19,35 @@ export const QuizForm = () => {
         initialValues={{
           email: "",
           option: "",
-          MultiSelect: "",
           mcq: "",
           multi: "",
-          multiChoices: "",
           likert: ''
         }}
         validationSchema={FormSchema}
-      >
+        onSubmit={(values) => {
+          alert(JSON.stringify(values, null, 2));
+        }}    >
         {({ errors, touched }) => (
           <Form>
-            <div>
+              <Heading
+             
+            />
+
+            <br />
               <MultiSelect
-                label={"Select here"}
+                label={"Select any"}
                 choices={options}
                 displayValue={"name"}
-                name="multiChoices"
+                name="multi"
               />
-              {errors.MultiSelect && touched.MultiSelect && (
-                <div>{errors.MultiSelect}</div>
-              )}
-            </div>
+             
+            
+
             <CustomInputField
               label="email"
               name="email"
               type="text"
-              placeholder="Enter the Email"
+              placeholder="name@email.com"
             />
             <br />
             <CustomSelect
@@ -104,16 +63,7 @@ export const QuizForm = () => {
               ))}
             </CustomSelect>
             <br />
-            <Heading
-              text={
-                "We want to find you an awesome therapist.A few questions first..."
-              }
-            />
-
-            <br />
-            <QuestionHeading text={"therapist.A few questions first..."} />
-            <br />
-            <br />
+          
             <LikertScale 
              label={
               "We want to find you an awesome therapist.A few questions first..."
@@ -121,8 +71,6 @@ export const QuizForm = () => {
             scaleDigit={scaleDigit}
             name="likert"
              />
-            <br />
-
             <br />
             <SingleSelect
               label={
@@ -132,8 +80,7 @@ export const QuizForm = () => {
               name="mcq"
             />
             <br />
-            <br />
-            <ButtonT text={"Next"} />
+            <ButtonT  type="submit"  text={"Next"} />
           </Form>
         )}
       </Formik>

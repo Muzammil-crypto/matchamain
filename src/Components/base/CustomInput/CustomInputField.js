@@ -1,23 +1,26 @@
 import { useField } from "formik";
 import React from "react";
+import { QuestionHeading } from "../../general/Quiz/Headings/QuestionHeading";
 
 export const CustomInputField = ({ label, ...props }) => {
   const [field, meta] = useField(props);
   console.log({ field, meta });
 
   return (
-    <div>
-      <label>{label}</label>
+    <div className="w-96 mb-20">
+     <QuestionHeading text={label} />
+
+       {meta.touched && meta.error ? (
+        <div className="ml-0">
+          <p className="text-error mt-1 ">{meta.error}</p>
+        </div>
+      ) : null}
       <input
-        className="w-80 ml-10 mt-10 p-2 rounded-lg "
+        className="w-96 ml-0 mt-2  mb-2  p-4 rounded-lg bg-white shadow-xl"
         {...field}
         {...props}
       />
-      {meta.touched && meta.error ? (
-        <div className="ml-20">
-          <p className="text-error mt-1 ml-1">{meta.error}</p>
-        </div>
-      ) : null}
+     
     </div>
   );
 };

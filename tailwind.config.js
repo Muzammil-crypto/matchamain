@@ -15,6 +15,8 @@ module.exports = {
       "2xl": "1536px",
     },
     colors: {
+      bg:'#D0C9FF',
+      border: '#5C46E5      ',
       error: "red",
       button: "#545ADE",
       Radio: "#f0f0f0",
@@ -71,6 +73,7 @@ module.exports = {
       montserrat: ["Montserrat"],
       sans: ["Graphik", "sans-serif"],
       serif: ["Merriweather", "serif"],
+      gelica: ["Gelica"],
     },
     fontSize: {
       sm: ["14px", "20px"],

@@ -76,3 +76,48 @@ export const Alphabets = [
   "Y",
   "Z",
 ];
+export const options = [
+
+  { name: "multiselect-ract-dropdo", id: 0 },
+  { name: "multiselect-reropdo", id: 1 },
+  { name: "multiselecteact-dropdo", id: 2 },
+  { name: "multi-react-dropdo", id: 3 },
+];
+export const scaleDigit = [
+  {
+    value: 1,
+    label: 'one'
+  },
+  {
+    value: 2,
+    label: 'two'
+  }, {
+    value: 3,
+    label: 'three'
+  }, {
+    value: 4,
+    label: 'four'
+  }, {
+    value: 5,
+    label: 'five'
+  },
+ 
+];
+export const myOpt = [
+  { value: "", label: "Please Select an Option" },
+  { value: "1960", label: "Mujahid" },
+  { value: "1961", label: "Mzamil" },
+  { value: "1962", label: "Mzamil" },
+  { value: "1963", label: "Mzamil" },
+  { value: "1964", label: "Mzamil" },
+  { value: "1965", label: "MzamilMzamil" },
+];
+
+export const radio = [
+  { value: "1960", label: "Mujahid" },
+  { value: "1961", label: "Mzamil" },
+  { value: "1962", label: "Mzamil" },
+  { value: "1963", label: "Mzamil" },
+  { value: "1964", label: "Mzamil" },
+  { value: "1965", label: "MzamilMzamil" },
+];
