@@ -1,0 +1,261 @@
+$backgroundColor: rgba(253, 253, 253, 0.9);  
+.centerFooter {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0rem 0;
+  }
+.footerBlock{
+    height: 184px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+width: 1440px;
+height: 184px;
+left: calc(50% - 1440px/2);
+top: 0px;
+background:$backgroundColor;
+backdrop-filter: blur(17px);
+border-radius: 40px 40px 0px 0px;
+.firstBlock{
+    margin-top: 30px;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+align-items: center;
+
+    margin-left: 60px;
+    margin-right: 60px;
+    width: 1400px;
+    .provider{
+        margin-left: 30px;
+        font-size: 16px;
+        font-weight: 400 ;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+}
+.secondBlock{
+    margin-top: 30px;
+
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+align-items: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    width: 1400px;
+    .lightText{
+        margin-left: 30px;
+        font-size: 12px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+}
+
+
+.menuItem{
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-left: 35px;
+}
+}
+
+
+// Mobile
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+    .centerFooter {
+        margin-top: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 0rem 0;
+      }
+    .footerBlock{
+       width:auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 184px;
+        left: calc(50% - 1440px/2);
+        top: 0px;
+    
+        background:$backgroundColor;
+    
+    backdrop-filter: blur(17px);
+    
+    border-radius: 40px 40px 0px 0px;
+    .firstBlock{
+        margin-top: 30px;
+        height: 30%;
+       
+    
+        margin-left: 190px;
+        margin-right: 60px;
+        .provider{
+            margin-left: 30px;
+            font-size: 16px;
+            font-weight: 400 ;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    }
+    .secondBlock{
+        margin-top: 30px;
+        height: 30%;
+       
+    
+        margin-left: 190px;
+        margin-right: 60px;
+        .lightText{
+            margin-left: 30px;
+            font-size: 12px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    }
+   
+   
+    .menuItem{
+        width: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-left: 35px;
+    }
+    
+    }
+   
+    
+}
+
+@media (min-width: 700px) and (max-width: 1024px) {
+    .centerFooter {
+        margin-top: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 0rem 0;
+      }
+    .footerBlock{
+       width:auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 184px;
+        left: calc(50% - 1440px/2);
+        top: 0px;
+    
+        background:$backgroundColor;
+    
+    backdrop-filter: blur(17px);
+    
+    border-radius: 40px 40px 0px 0px;
+    .firstBlock{
+        margin-top: 30px;
+        height: 30%;
+        margin-left: 300px;
+        margin-right: 60px;
+        .provider{
+            margin-left: 30px;
+            font-size: 16px;
+            font-weight: 400 ;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    }
+    .secondBlock{
+        margin-top: 30px;
+        height: 30%;
+        margin-left: 300px;
+        margin-right: 60px;
+        .lightText{
+            margin-left: 30px;
+            font-size: 12px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    }
+   
+   
+    .menuItem{
+        width: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-left: 35px;
+    }
+    }
+    
+    
+    
+}
+
+
+@media   (max-width: 700px) {
+    .centerFooter {
+        margin-top: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 0rem 0;
+      }
+    .footerBlock{
+        width: 1440px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 184px;
+        left: calc(50% - 1440px/2);
+        top: 0px;
+    
+        background:$backgroundColor;
+    
+        backdrop-filter: blur(17px);
+    
+        border-radius: 40px 40px 0px 0px;
+        .firstBlock{
+            margin-top: 30px;
+            height: 30%;
+           align-items: center;
+            display: flex;
+            flex-direction: column;
+            .provider{
+                text-align: left;
+        
+                text-align: left;
+                font-size: 12px;
+                font-weight: 300 ;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+           
+        }
+        .secondBlock{
+            margin-top: 30px;
+            height: 30%;
+            margin-top: 30px;
+            height: 30%;
+           align-items: center;
+            display: flex;
+            flex-direction: column-reverse;
+            .lightText{
+                text-align: left;
+                font-size: 12px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+        }
+        .menuItem{
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+        }
+        
+    }
+   
+    
+}

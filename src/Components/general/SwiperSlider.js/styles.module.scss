@@ -1,0 +1,16 @@
+.rightSwipe{
+    margin-top: 10px; margin-left: 56px;
+}
+.leftSwipe{
+    margin-left: 350px; margin-top: 10px;
+}
+
+@media (max-width: 700px){
+    .rightSwipe{
+        margin-top: 8px; margin-left: 30px;
+    }
+    .leftSwipe{
+        margin-left: 80px; margin-top: 8px;
+    }
+
+}

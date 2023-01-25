@@ -1,0 +1,139 @@
+.aboutBlock{
+    display: flex;
+width: 1440px;
+flex-direction: column;
+align-items: center;
+
+.heading{
+    text-align: left;
+    font-size: 50px;
+    font-weight: 400;
+    font-family: 'Khulatext';
+    }
+    .buttons{
+        display: flex;
+        flex-direction: row;
+    }
+.featured{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 14px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .leftBlock{
+        padding: 100px;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        align-items: center;
+    }
+    .rightBlock{
+        padding: 100px;
+    
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        align-items: center;
+    }
+}
+}
+@media (min-width: 700px) and (max-width: 1350px){
+    .aboutBlock{
+    display: flex;
+    width: 1440px;
+    flex-direction: column;
+    align-items: center;
+      
+    .heading{
+
+        text-align: left;
+        font-size: 25px;
+        font-weight: 400;
+        font-family: 'Khulatext';
+        }
+        .secImage{
+            padding-right: 60px;
+            padding-left: 60px;
+    
+            height: auto;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: row;
+        }
+    .featured{
+        align-items: center;
+        margin-top: 14px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        .leftBlock{
+            margin-left: 130px;
+    
+            align-items: baseline;
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+        }
+        .rightBlock{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            align-items: center;
+        }
+    }
+ 
+  
+    }
+    
+}
+
+@media (max-width: 700px){
+    .aboutBlock{
+    display: flex;
+    width: 1440px;
+    flex-direction: column;
+    align-items: center;
+    .heading{
+
+        text-align: left;
+        font-size: 25px;
+        font-weight: 400;
+        font-family: 'Khulatext';
+        }
+        .secImage{
+            padding-right: 140px;
+            padding-left: 140px;
+    
+            height: auto;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: column;
+        }
+    .featured{
+        align-items: center;
+      
+        margin-top: 14px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .leftBlock{
+
+            margin-top: -100px;
+            align-items: baseline;
+            display: flex;
+            flex-direction: column;
+            width: 35%;
+        }
+        .rightBlock{
+            margin-top: -130px;
+            display: flex;
+            flex-direction: column;
+            width: 35%;
+            align-items: center;
+        }
+    }
+    }
+}

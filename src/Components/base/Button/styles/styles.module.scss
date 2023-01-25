@@ -1,0 +1,67 @@
+$buttonColor:#545ADE;
+$textColor:white;
+$shadowColor: gray;
+
+.button{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    background-color: $buttonColor;
+    width: 223px;
+    height: 50.65px;
+    border-radius: 10.77px;
+    border-color: $buttonColor;
+    border-width: 1px;
+    box-shadow: 1px 1.2px $shadowColor;
+    .buttonText{
+        color: $textColor;
+        font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif ;
+        font-size: 18.14px;
+    }
+
+}
+
+
+@media (min-width: 700px) and (max-width: 1200px) {
+    .button{
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 50px;
+        background-color: $buttonColor;
+        width: 180px;
+        height: 40.65px;
+        border-radius: 8.77px;
+        border-color: $buttonColor;
+        border-width: 0.5px;
+        box-shadow: 1px 1.2px $shadowColor;
+        .buttonText{
+            color: $textColor;
+            font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif ;
+            font-size: 16.14px;
+        }
+    
+    }
+   
+}
+@media (min-width: 250px) and (max-width: 700px) {
+    .button{
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 10px;
+        background-color:$buttonColor;
+        width: 140px;
+        height: 30.65px;
+        border-radius: 8.77px;
+        border-color:$buttonColor;
+        border-width: 0.5px;
+        box-shadow: 1px 1.2px $shadowColor;
+        .buttonText{
+            color: $textColor;
+            font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif ;
+            font-size: 12.14px;
+        
+        }
+    
+    }
+   
+}

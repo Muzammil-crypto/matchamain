@@ -1,0 +1,25 @@
+.sectionHeader{
+font-size: 60px;
+font-family: Times;
+font-weight: 250;
+}
+.description{
+text-align: left;
+font-size: 16px;
+font-weight: 100;
+font-family: 'Khulatext';
+}
+
+@media (max-width: 700px){
+    .sectionHeader{
+        font-size: 30px;
+        font-family: Times;
+        font-weight: 250;
+        }
+        .description{
+        text-align: left;
+        font-size: 12px;
+        font-weight: 100;
+        font-family: 'Khulatext';
+        }
+}

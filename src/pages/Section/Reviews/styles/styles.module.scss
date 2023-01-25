@@ -1,0 +1,33 @@
+.reviewCard{
+    display: flex;
+    flex-direction: column;
+    width: 1420px;
+    align-items: center;
+}
+.swiperStyle{
+    display: flex; align-items: center; width: 100% 
+}
+
+@media (min-width: 700px) and (max-width: 1200px) {
+    .reviewCard{
+        display: flex;
+        width: 1420px;
+        align-items: center;
+    }
+    .swiperStyle{
+        display: flex; align-items: center; width: 100% 
+    }
+    .descriptiontext{
+       width: 800px;
+        }
+    
+}
+@media (min-width: 300px) and (max-width: 700px) {
+    .descriptiontext{
+        width: 300px;
+    }
+}
+
+
+
+

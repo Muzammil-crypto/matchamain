@@ -1,0 +1,105 @@
+
+  //colors
+  $borderColor: #545ADE;
+  $textColor: white;
+  $backGround: rgba(84, 90, 222, 0.4);
+  
+  .container {
+    align-items: center;
+    display: flex;
+    margin-top: 48px;
+    position: relative;
+    width: 1400px;
+    .card {
+      height: auto;
+     background-image: './logo.svg';
+      border-radius: 8;
+    }
+    .image {
+      display: block;
+      width: 353px;
+      height: 567px;
+    }
+    .overlay {  
+      font-weight: 100;
+      font-family: 'Khulatext';
+      font-weight: 400;
+      font-size: 16px;
+      border: 0.650476px solid $borderColor;
+      backdrop-filter: blur(11.0581px);
+      height: 180px;
+      position: absolute;
+      bottom:75px;
+      left: 12px;
+      background: $backGround;
+
+      background: $backGround;
+
+      color: $textColor;
+      width: 330px;
+      transition: .5s ease;
+      opacity:0;
+      color: $textColor;
+      padding: 20px;
+      text-align: center;
+      opacity: 4;
+      border-radius: 14px;
+  
+    }
+    
+  }
+  
+  
+
+
+  @media (max-width: 700px) {
+ 
+    .container {
+      align-items: center;
+      display: flex;
+      margin-top: 48px;
+      position: relative;
+      width: 1400px;
+      .card {
+        height: auto;
+         background-image: './logo.svg';
+          border-radius: 8;
+        }
+      .image {
+        display: block;
+        width: 352px;
+        height: 562px;
+      }
+      
+      .overlay {
+        font-weight: 100;
+        font-family: 'Khulatext';
+        font-weight: 400;
+        font-size: 16px;
+        border: 0.650476px solid $borderColor;
+        backdrop-filter: blur(11.0581px);
+        height: 180px;
+        position: absolute;
+        bottom:70px;
+        left: 12px;
+        background: $backGround;
+        background: $backGround;
+         
+        color: $textColor;
+        width: 328px;
+        transition: .5s ease;
+        opacity:0;
+        color: $textColor;
+        padding: 20px;
+        text-align: center;
+        opacity: 4;
+        border-radius: 14px;
+    
+      }
+    }
+    
+    
+  }
+
+  
+ 
