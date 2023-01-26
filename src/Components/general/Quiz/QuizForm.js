@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, {  useEffect, useContext } from "react";
 import { ButtonT } from "../../../Quiz/Components/base/Button/ButtonT";
 import { CustomInputField } from "../../base/CustomInput/CustomInputField";
 import { LikertScale } from "../LikertScale/LikertScale";
@@ -12,7 +12,6 @@ import {
 import { questions } from "../../../const/questions";
 import { QuestionHeading } from "./Headings/QuestionHeading";
 import { FormContext } from "../../../contexts/FormContext";
-import { scaleDigit } from "../../../const/texts";
 
 export const QuizForm = () => {
 
@@ -137,7 +136,7 @@ export const QuizForm = () => {
                   <div className="mt-20" key={val}>
                     <QuestionHeading color={"text-black"} key={val} text={item.question} />
                     <CustomInputField
-                      label="email"
+                      label="Write below "
                       name="name"
                       type="text"
                       placeholder="name@email.com"
@@ -155,6 +154,7 @@ export const QuizForm = () => {
               onClick={() => {
                 if(step < questions.length-1)
                 {setStep(step + 1)}
+               
                 else{
                   setStep(1)
                 }
@@ -163,11 +163,27 @@ export const QuizForm = () => {
             <div className="flex flex-row ml-96">
               <div className="flex flex-row items-center justify-center ml-96">
                 <MdOutlineKeyboardArrowDown
+                 onClick={() => {
+                  if(step < questions.length && step > 1)
+                  {setStep(step - 1)}
+                 
+                  else{
+                    setStep(1)
+                  }
+                }}
                   color="white"
                   size={40}
                   className=" color-white bg-button w-8 mr-1 "
                 />
                 <MdOutlineKeyboardArrowUp
+                 onClick={() => {
+                  if(step < questions.length-1 && step > 0)
+                  {setStep(step + 1)}
+                 
+                  else{
+                    setStep(1)
+                  }
+                }}
                   color="white"
                   size={40}
                   className=" color-white bg-button w-8"

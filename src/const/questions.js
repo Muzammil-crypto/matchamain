@@ -141,8 +141,8 @@ export const questions= [
       "select": "Select one",
       "type": "option",
       "options": [
-        { "id": "0", "name": "Let’s see some therapists! " },
-        { "id": "1", "name": "Let’s get to know each other better" }
+        { "value": "0", "label": "Let’s see some therapists! " },
+        { "value": "1", "label": "Let’s get to know each other better" }
       ],
       "required": true
     },
@@ -152,10 +152,10 @@ export const questions= [
       "select": "Select one",
       "type": "option",
       "options": [
-        { "id": "0", "name": "Is looking good!" },
-        { "id": "1", "name": "Isn't so clear to me" },
-        { "id": "2", "name": "Looking like it can get bad" },
-        { "id": "3", "name": "Really Sucks" }
+        { "value": "0", "label": "Is looking good!" },
+        { "value": "1", "label": "Isn't so clear to me" },
+        { "value": "2", "label": "Looking like it can get bad" },
+        { "value": "3", "label": "Really Sucks" }
       ],
       "required": true
     },
@@ -165,10 +165,10 @@ export const questions= [
       "select": "Select one",
       "type": "option",
       "options": [
-        { "id": "0", "name": "Not Really" },
-        { "id": "1", "name": "Only when something bothers me" },
-        { "id": "2", "name": "Yes, but I don’t have panic attacks" },
-        { "id": "3", "name": "Yes, but I have panic attacks" }
+        { "value": "0", "label": "Is looking good!" },
+        { "value": "1", "label": "Isn't so clear to me" },
+        { "value": "2", "label": "Looking like it can get bad" },
+        { "value": "3", "label": "Really Sucks" }
       ],
       "required": true
     },
