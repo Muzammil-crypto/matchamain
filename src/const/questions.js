@@ -293,17 +293,57 @@ export const questions= [
       "required": true
     },
     {
-      "question": "I’m kind to people even if they’ve betrayed me...",
-      "id": 20,
-      "select": "Select one",
-      "type": "mcq",
-      "required": true
+      question: "I’m kind to people even if they’ve betrayed me.",
+      id: 20,
+      select: "Select one",
+      type: "mcq",
+      options :[
+        {
+          value: 1,
+          label: 'one'
+        },
+        {
+          value: 2,
+          label: 'two'
+        }, {
+          value: 3,
+          label: 'three'
+        }, {
+          value: 4,
+          label: 'four'
+        }, {
+          value: 5,
+          label: 'five'
+        },
+       
+      ],
+      required: true
     },
     {
       "question": "I really like being prepared for every�single activity in my life",
       "id": 21,
       "select": "Select one",
       "type": "mcq",
+      options :[
+        {
+          value: 1,
+          label: 'one'
+        },
+        {
+          value: 2,
+          label: 'two'
+        }, {
+          value: 3,
+          label: 'three'
+        }, {
+          value: 4,
+          label: 'four'
+        }, {
+          value: 5,
+          label: 'five'
+        },
+       
+      ],
       "required": true
     },
     {
@@ -311,6 +351,26 @@ export const questions= [
       "id": 22,
       "select": "Select one",
       "type": "mcq",
+      options :[
+        {
+          value: 1,
+          label: 'one'
+        },
+        {
+          value: 2,
+          label: 'two'
+        }, {
+          value: 3,
+          label: 'three'
+        }, {
+          value: 4,
+          label: 'four'
+        }, {
+          value: 5,
+          label: 'five'
+        },
+       
+      ],
       "required": true
     },
     {
@@ -318,6 +378,26 @@ export const questions= [
       "id": 23,
       "select": "Select one",
       "type": "mcq",
+      options :[
+        {
+          value: 1,
+          label: 'one'
+        },
+        {
+          value: 2,
+          label: 'two'
+        }, {
+          value: 3,
+          label: 'three'
+        }, {
+          value: 4,
+          label: 'four'
+        }, {
+          value: 5,
+          label: 'five'
+        },
+       
+      ],
       "required": true
     },
     {
@@ -325,6 +405,26 @@ export const questions= [
       "id": 24,
       "select": "Select one",
       "type": "mcq",
+      options :[
+        {
+          value: 1,
+          label: 'one'
+        },
+        {
+          value: 2,
+          label: 'two'
+        }, {
+          value: 3,
+          label: 'three'
+        }, {
+          value: 4,
+          label: 'four'
+        }, {
+          value: 5,
+          label: 'five'
+        },
+       
+      ],
       "required": true
     },
     {
@@ -334,7 +434,6 @@ export const questions= [
       "type": "multi",
       "placeholder": "Select State",
       options : [
-
         { name: "multiselect-ract-dropdo", id: 0 },
         { name: "multiselect-reropdo", id: 1 },
         { name: "multiselecteact-dropdo", id: 2 },

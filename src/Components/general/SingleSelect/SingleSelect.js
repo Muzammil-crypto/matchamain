@@ -1,23 +1,20 @@
-import React, { useState } from "react";
-import { useFormikContext, ErrorMessage } from "formik";
+import React, { useContext, useState } from "react";
 import { Alphabets } from "../../../const/texts";
+import { FormContext } from "../../../contexts/FormContext";
 import { QuestionHeading } from "../Quiz/Headings/QuestionHeading";
 
 export const SingleSelect = ({ options, name, label }) => {
-  const { setFieldValue, setFieldTouched } = useFormikContext();
   const [ listIndex, setListIndex ] = useState({});
 
+  const {formValues, setFormValues, formErrors} = useContext(FormContext);
 
   const handleChange = (evt, value) => {
-    setFieldTouched(name, true);
-    setFieldValue(name, value);
-  };
+setFormValues({...formValues, mcq: value})  };
 
   return (
-    <div className="w-auto mb-20">
-
+    <div className="mb-5 mt-2">
+      
       <QuestionHeading text={label} />
-      <p className="text-error"><ErrorMessage name={name} /></p>
 
       {options.map((_, i) => {
         return (
@@ -25,7 +22,7 @@ export const SingleSelect = ({ options, name, label }) => {
           key={i}
 
             onClick={(e) => {
-              handleChange(e, _.value);
+            handleChange(e, _.label);
             setListIndex(i)
 
             
@@ -43,6 +40,7 @@ export const SingleSelect = ({ options, name, label }) => {
           </div>
         );
       })}
+      {formErrors.mcq && <div className="text-error">{formErrors.mcq}</div>}
     </div>
   );
 };

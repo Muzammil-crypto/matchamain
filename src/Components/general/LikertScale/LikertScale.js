@@ -1,26 +1,26 @@
 import { useFormikContext, ErrorMessage } from "formik";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { FormContext } from "../../../contexts/FormContext";
 import { QuestionHeading } from "../Quiz/Headings/QuestionHeading";
 
 
 
-export const LikertScale = ({scaleDigit, name, label}) => {
+export const LikertScale = ({opt, name, label}) => {
+  const {formValues, setFormValues, formErrors} = useContext(FormContext);
+
   const [ listIndex, setListIndex ] = useState({});
-    const { setFieldValue, setFieldTouched } = useFormikContext();
 
   const handleChange = (evt, value) => {
-    setFieldTouched(name, true);
-    setFieldValue(name, value);
+    setFormValues({...formValues, mcq: value})
   };
   return (
-    <div className="w-auto mb-20">
+    <div className="mb-5 mt-2">
       <QuestionHeading text={label} />
-    
-    <p className="text-error"><ErrorMessage name={name} /></p>
+      {formErrors.mcq && <div className="text-error">{formErrors.mcq}</div>}
 
     <div className="flex flex-row items-center ">
       <text className="text-button mr-2 ">Strongly Disagree</text>
-      {scaleDigit.map((item, val) => (
+      {opt?.map((item, val) => (
         <div
           onClick={(e) => {
            

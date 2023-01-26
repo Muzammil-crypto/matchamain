@@ -1,17 +1,16 @@
 import Multiselect from "multiselect-react-dropdown";
-import React, { useState } from "react";
-import { useFormikContext, ErrorMessage } from "formik";
+import React, { useContext, useState } from "react";
+import { FormContext } from "../../../contexts/FormContext";
 import { QuestionHeading } from "../Quiz/Headings/QuestionHeading";
 
 export const MultiSelect = ({ name, label, choices, ...props }) => {
-  const { setFieldValue, setFieldTouched, errors } = useFormikContext();
   const [selectedOptions, setSelectedOptions] = useState();
+  const {formValues, setFormValues, formErrors} = useContext(FormContext);
 
   
   function handleSelect(data) {
     setSelectedOptions(data);
-    setFieldTouched(name, true);
-  setFieldValue(name, selectedOptions);
+    setFormValues({...formValues, multi: selectedOptions})
   }
 
   return (
@@ -19,7 +18,6 @@ export const MultiSelect = ({ name, label, choices, ...props }) => {
     <div className="w-96 mb-20">
   
   <QuestionHeading text={label} />
-      <p className="text-error">{errors[name]}</p>
       
 
       <div 
@@ -36,6 +34,7 @@ export const MultiSelect = ({ name, label, choices, ...props }) => {
         selectedValues={selectedOptions}
       />
       </div>
+      {formErrors.multi && <div className="text-error">{formErrors.multi}</div>}
     </div>
   );
 };
