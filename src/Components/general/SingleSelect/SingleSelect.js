@@ -24,7 +24,7 @@ setShowChild(true):""
 
   return (
     <div className="mb-5 mt-2">
-      <QuestionHeading size={"text-lg"} text={child?.question} />
+      <QuestionHeading size={"text-lg"} text={label} />
       {isError && <div className="text-error">{formErrors.mcq}</div>}
 
       {options.map((_, i) => {
