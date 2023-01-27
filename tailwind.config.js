@@ -15,6 +15,7 @@ module.exports = {
       "2xl": "1536px",
     },
     colors: {
+      alphaBorder:"#5F6060",
       bg:'#D0C9FF',
       border: '#5C46E5      ',
       error: "red",

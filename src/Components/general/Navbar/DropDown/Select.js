@@ -7,7 +7,10 @@ export const CustomSelect = ({ label, ...props }) => {
 
   return (
     <div className="mb-5 mt-2">
+
       <QuestionHeading text={label} />
+{isError && <div className="text-error">{formErrors.option}</div>}
+
       <select
         className="w-96 ml-0 mt-1 p-4 shadow-xl rounded-lg bg-gray"
         {...props}
@@ -15,7 +18,6 @@ export const CustomSelect = ({ label, ...props }) => {
         
 
 />
-{isError && <div className="text-error">{formErrors.option}</div>}
      
     </div>
   );

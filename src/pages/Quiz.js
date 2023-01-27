@@ -10,12 +10,13 @@ export default function Quiz() {
     option: "",
     multi: [],
     likert: "",
-    myData: {
-      email: {},
+    myData: 
+    {
+      email: [],
       mcq:[],
-      option: {},
-      multi: [{}],
-      likert: {},
+      option: [],
+      multi: [],
+      likert: [],
     }
 
   }

@@ -12,6 +12,8 @@ export const LikertScale = ({opt, name, label}) => {
 
   const handleChange = (evt, value) => {
     setFormValues({...formValues, likert: value})
+    formValues.myData.likert.push(value);
+
   };
   return (
     <div className="mb-5 mt-2">

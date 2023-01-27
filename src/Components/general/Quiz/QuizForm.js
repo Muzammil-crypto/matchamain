@@ -33,6 +33,8 @@ export const QuizForm = () => {
     
     const { option, value } = e.target;
     setFormValues({ ...formValues, option: value });
+    formValues.myData.option.push(value);
+
     setIsMarked(true)
 
   };
@@ -59,7 +61,7 @@ export const QuizForm = () => {
     if (!values.option && isMarked===false) {
       errors.option = "Option is required";
     }
-   if (isError===true) {
+   if (!values.multi.length||isError===true) {
       errors.multi = "Please Select Any";
     }
     if(isError===true ){
@@ -73,7 +75,7 @@ export const QuizForm = () => {
   };
   console.log('===>> isError', isError)
   return (
-    <div className="mb-80 ml-72 w-screen">
+    <div className="mb-80 ml-60 w-screen">
       <form onSubmit={handleSubmit} >
         <div className="ml-20 ">
           {questions.map((item, val) => {
@@ -169,7 +171,7 @@ export const QuizForm = () => {
                 }
               }}
             />
-            <div className="flex flex-row ml-96">
+            <div className="flex flex-row ml-60">
               <div className="flex flex-row items-center justify-center ml-96">
                 <MdOutlineKeyboardArrowDown
                  onClick={() => {

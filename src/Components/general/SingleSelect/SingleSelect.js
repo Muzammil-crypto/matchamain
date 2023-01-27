@@ -21,6 +21,7 @@ export const SingleSelect = ({ options, name, label }) => {
   return (
     <div className="mb-5 mt-2">
       <QuestionHeading text={label} />
+      {isError && <div className="text-error">{formErrors.mcq}</div>}
 
       {options.map((_, i) => {
         return (
@@ -31,20 +32,19 @@ export const SingleSelect = ({ options, name, label }) => {
               setListIndex(i);
              setIsMarked(true);
             }}
-            className={`mt-2 bg-gray w-96 p-1.5 rounded-lg h-3/4 flex flex-row  align-middle  shadow-lg items-center ${
+            className={`mt-2.5 bg-gray w-96 p-1.5 rounded-lg h-12 flex flex-row  align-middle  shadow-lg items-center ${
               listIndex === i && "border border-button"
             }`}
           >
-            <div className="bg-Radio w-12 flex justify-center p-3 rounded-lg shadow-xl  border border-black">
-              <text>{Alphabets[i]}</text>
+            <div className="bg-Radio w-8 h-8 flex justify-center p-1 rounded-sm shadow-xl  border-2 border-alphaBorder">
+              <text className="font-bold">{Alphabets[i]}</text>
             </div>
-            <div className="bg-gray w-100 flex justify-center p-3 rounded-sm ml-4 ">
+            <div className="bg-gray w-72 h-11 flex justify-center p-3 rounded-sm ml-4 ">
               <text className="">{_.label}</text>
             </div>
           </div>
         );
       })}
-      {isError && <div className="text-error">{formErrors.mcq}</div>}
     </div>
   );
 };

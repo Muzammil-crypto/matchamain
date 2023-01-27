@@ -11,8 +11,10 @@ export const CustomInputField = ({ label, ...props }) => {
   const handleChange = (e) => { 
     const {email, value} = e.target;
     setFormValues({...formValues, email: value})
+
     console.log(formValues)
 if(regex.test(value)){
+  formValues.myData.email.push(value);
   setIsMarked(true)
 }
 
@@ -21,6 +23,8 @@ if(regex.test(value)){
 
     <div className="w-96 mb-20">
      <QuestionHeading text={label} />
+     {formErrors.email && <div className="text-error">{formErrors.email
+         }</div>}
       <input
         className="w-96 ml-0 mt-2  mb-2  p-4 rounded-lg bg-white shadow-xl"
         {...props}
@@ -28,8 +32,7 @@ if(regex.test(value)){
         value= {formValues.email}
         onChange={handleChange}
       />
-         {formErrors.email && <div className="text-error">{formErrors.email
-         }</div>}
+       
 
     </div>
   );

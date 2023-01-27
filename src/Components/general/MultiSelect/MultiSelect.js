@@ -11,6 +11,8 @@ export const MultiSelect = ({ name, label, choices, ...props }) => {
   function handleSelect(data) {
     setSelectedOptions(data);
     setFormValues({...formValues, multi: selectedOptions})
+    formValues.myData.multi.push(data);
+
     setIsMarked(true);
   }
 
@@ -20,6 +22,7 @@ export const MultiSelect = ({ name, label, choices, ...props }) => {
   
   <QuestionHeading text={label} />
       
+  {isError && <div className="text-error">{formErrors.multi}</div>}
 
       <div 
         className="bg-gray rounded-non shadow-lg mt-1 py-1 px-1 rounded-lg"
@@ -35,7 +38,6 @@ export const MultiSelect = ({ name, label, choices, ...props }) => {
         selectedValues={selectedOptions}
       />
       </div>
-      {isError && <div className="text-error">{formErrors.multi}</div>}
     </div>
   );
 };
