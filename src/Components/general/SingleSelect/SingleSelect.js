@@ -13,6 +13,9 @@ export const SingleSelect = ({ options, name, label, child }) => {
     setFormValues({ ...formValues, mcq: value });
     formValues.myData.mcq.push(value);
     console.log({'ALL OPTIONS:': formValues.myData});
+    value==='Yes'?
+    showChildren():""
+
   };
 const showChildren =()=> {
   child?
@@ -32,7 +35,7 @@ setShowChild(true):""
               handleChange(e, _.label);
               setListIndex(i);
              setIsMarked(true);
-              showChildren();
+             
             }}
             className={`mt-2.5 bg-gray w-96 p-1.5 rounded-lg h-12 flex flex-row  align-middle  shadow-lg items-center ${
               listIndex === i && "border border-button"
