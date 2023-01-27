@@ -39,7 +39,7 @@ export const SingleSelect = ({ options, name, label }) => {
             <div className="bg-Radio w-8 h-8 flex justify-center p-1 rounded-sm shadow-xl  border-2 border-alphaBorder">
               <text className="font-bold">{Alphabets[i]}</text>
             </div>
-            <div className="bg-gray w-72 h-11 flex justify-center p-3 rounded-sm ml-4 ">
+            <div className="bg-gray w-72 h-11 flex justify-center p-3 text-black  ml-4 ">
               <text className="">{_.label}</text>
             </div>
           </div>
