@@ -1,5 +1,4 @@
-import { FormikContext } from "formik";
-import { createContext, useState } from "react";
+import { useState } from "react";
 import { Navbar } from "../Components/general/Navbar/Navbar";
 import { QuizForm } from "../Components/general/Quiz/QuizForm";
 import { Footer } from "./Section/Footer/Footer";
@@ -11,14 +10,28 @@ export default function Quiz() {
     option: "",
     multi: [],
     likert: "",
+    myData: {
+      email: {},
+      mcq:[],
+      option: {},
+      multi: [{}],
+      likert: {},
+    }
 
   }
-  const [formValues , setFormValues] = useState(initialValues);
+  const [showMessage, setShowMessage] = useState(false);
+ const [isMarked , setIsMarked] = useState(false);
+  const [formValues , setFormValues] = useState(initialValues,);
   const [formErrors , setFormErros] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [step, setStep] = useState(0)
+  const [isError, setIsError] = useState(false)
   return (
     <FormContext.Provider  value={{ 
+      showMessage, 
+      setShowMessage,
+      isMarked , 
+      setIsMarked,
       formValues,
       setFormValues,
       formErrors,
@@ -26,7 +39,9 @@ export default function Quiz() {
       isSubmit,
       setIsSubmit,
       step,
-      setStep
+      setStep,
+      isError,
+      setIsError
      }}>
     <div >
       <Navbar />

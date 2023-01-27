@@ -4,12 +4,18 @@ import { FormContext } from "../../../contexts/FormContext";
 import { QuestionHeading } from "../../general/Quiz/Headings/QuestionHeading";
 
 export const CustomInputField = ({ label, ...props }) => {
-  const {formValues, setFormValues, formErrors} = useContext(FormContext);
+  const {formValues, setFormValues, formErrors,  setIsError, setIsMarked,
+    isError} = useContext(FormContext);
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
   
   const handleChange = (e) => { 
     const {email, value} = e.target;
     setFormValues({...formValues, email: value})
     console.log(formValues)
+if(regex.test(value)){
+  setIsMarked(true)
+}
+
   }
   return (
 
@@ -22,7 +28,9 @@ export const CustomInputField = ({ label, ...props }) => {
         value= {formValues.email}
         onChange={handleChange}
       />
-     {formErrors.email && <div className="text-error">{formErrors.email}</div>}
+         {formErrors.email && <div className="text-error">{formErrors.email
+         }</div>}
+
     </div>
   );
 };

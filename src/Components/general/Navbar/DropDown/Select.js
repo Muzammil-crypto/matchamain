@@ -1,10 +1,9 @@
-import { useField } from "formik";
 import React, { useContext } from "react";
 import { FormContext } from "../../../../contexts/FormContext";
 import { QuestionHeading } from "../../Quiz/Headings/QuestionHeading";
 
 export const CustomSelect = ({ label, ...props }) => {
-  const {formErrors} = useContext(FormContext);
+  const {formErrors, isError} = useContext(FormContext);
 
   return (
     <div className="mb-5 mt-2">
@@ -16,7 +15,7 @@ export const CustomSelect = ({ label, ...props }) => {
         
 
 />
-{formErrors.option && <div className="text-error">{formErrors.option}</div>}
+{isError && <div className="text-error">{formErrors.option}</div>}
      
     </div>
   );

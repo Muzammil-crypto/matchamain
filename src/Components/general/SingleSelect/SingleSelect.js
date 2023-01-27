@@ -4,28 +4,32 @@ import { FormContext } from "../../../contexts/FormContext";
 import { QuestionHeading } from "../Quiz/Headings/QuestionHeading";
 
 export const SingleSelect = ({ options, name, label }) => {
-  const [ listIndex, setListIndex ] = useState({});
+  const [listIndex, setListIndex] = useState({});
 
-  const {formValues, setFormValues, formErrors} = useContext(FormContext);
+  const { formValues, setFormValues, formErrors, isMarked, setIsMarked,  showMessage, 
+    setShowMessage, isError } =
+    useContext(FormContext);
 
   const handleChange = (evt, value) => {
-setFormValues({...formValues, mcq: value})  };
+    setFormValues({ ...formValues, mcq: value });
+    formValues.myData.mcq.push(value);
+    // setFormValues({ ...formValues, mcq: "" });
+    console.log({'ALL OPTIONS:': formValues.myData});
+  };
+
 
   return (
     <div className="mb-5 mt-2">
-      
       <QuestionHeading text={label} />
 
       {options.map((_, i) => {
         return (
           <div
-          key={i}
-
-            onClick={(e) => {
-            handleChange(e, _.label);
-            setListIndex(i)
-
-            
+            key={i}
+            onClick={ (e) => {
+              handleChange(e, _.label);
+              setListIndex(i);
+             setIsMarked(true);
             }}
             className={`mt-2 bg-gray w-96 p-1.5 rounded-lg h-3/4 flex flex-row  align-middle  shadow-lg items-center ${
               listIndex === i && "border border-button"
@@ -40,7 +44,7 @@ setFormValues({...formValues, mcq: value})  };
           </div>
         );
       })}
-      {formErrors.mcq && <div className="text-error">{formErrors.mcq}</div>}
+      {isError && <div className="text-error">{formErrors.mcq}</div>}
     </div>
   );
 };

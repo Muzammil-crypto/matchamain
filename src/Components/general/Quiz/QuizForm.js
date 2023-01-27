@@ -1,4 +1,4 @@
-import React, {  useEffect, useContext } from "react";
+import React, {  useEffect, useContext, useState } from "react";
 import { ButtonT } from "../../../Quiz/Components/base/Button/ButtonT";
 import { CustomInputField } from "../../base/CustomInput/CustomInputField";
 import { LikertScale } from "../LikertScale/LikertScale";
@@ -15,7 +15,6 @@ import { FormContext } from "../../../contexts/FormContext";
 
 export const QuizForm = () => {
 
-  
   const {
     formValues,
     setFormValues,
@@ -25,10 +24,17 @@ export const QuizForm = () => {
     setIsSubmit,
     step,
     setStep,
+    isMarked, 
+    setIsMarked,
+    setIsError,
+    isError
   } = useContext(FormContext);
   const handleChange = (e) => {
+    
     const { option, value } = e.target;
     setFormValues({ ...formValues, option: value });
+    setIsMarked(true)
+
   };
 
 
@@ -47,26 +53,25 @@ export const QuizForm = () => {
   const validate = (values) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.email) {
-      errors.email = "Email is required";
-    } else if (!regex.test(values.email)) {
-      errors.email = "Email is invalid";
-    }
-    if (!values.option) {
+    if (!values.email&&!regex.test(values.email)) {
+      errors.email = "A Valid Email is required";
+    } 
+    if (!values.option && isMarked===false) {
       errors.option = "Option is required";
     }
-   if (!values.multi.length) {
+   if (isError===true) {
       errors.multi = "Please Select Any";
     }
-    if(!values.mcq){
+    if(isError===true ){
       errors.mcq = "Please Select an Option"
     }
-    if(!values.likert){
+    if(isError===true){
       errors.likert = "Please Select one"
     }
 
     return errors;
   };
+  console.log('===>> isError', isError)
   return (
     <div className="mb-80 ml-72 w-screen">
       <form onSubmit={handleSubmit} >
@@ -152,11 +157,15 @@ export const QuizForm = () => {
               type="submit"
               text={"Next"}
               onClick={() => {
-                if(step < questions.length-1)
-                {setStep(step + 1)}
-               
+                console.log('===>> hello')
+                if(step < questions.length-1 && isMarked===true)
+                {
+                  setIsMarked(false)
+                  setIsError(false)
+                  setStep(step + 1);
+                }
                 else{
-                  setStep(1)
+                  setIsError(true)
                 }
               }}
             />
@@ -165,7 +174,8 @@ export const QuizForm = () => {
                 <MdOutlineKeyboardArrowDown
                  onClick={() => {
                   if(step < questions.length && step > 1)
-                  {setStep(step - 1)}
+                  {setStep(step - 1)
+                  }
                  
                   else{
                     setStep(1)
@@ -178,7 +188,8 @@ export const QuizForm = () => {
                 <MdOutlineKeyboardArrowUp
                  onClick={() => {
                   if(step < questions.length-1 && step > 0)
-                  {setStep(step + 1)}
+                  {setStep(step + 1)
+                  }
                  
                   else{
                     setStep(1)

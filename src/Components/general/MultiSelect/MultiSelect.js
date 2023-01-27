@@ -5,12 +5,13 @@ import { QuestionHeading } from "../Quiz/Headings/QuestionHeading";
 
 export const MultiSelect = ({ name, label, choices, ...props }) => {
   const [selectedOptions, setSelectedOptions] = useState();
-  const {formValues, setFormValues, formErrors} = useContext(FormContext);
+  const {formValues, setFormValues, formErrors, setIsMarked, isError} = useContext(FormContext);
 
   
   function handleSelect(data) {
     setSelectedOptions(data);
     setFormValues({...formValues, multi: selectedOptions})
+    setIsMarked(true);
   }
 
   return (
@@ -34,7 +35,7 @@ export const MultiSelect = ({ name, label, choices, ...props }) => {
         selectedValues={selectedOptions}
       />
       </div>
-      {formErrors.multi && <div className="text-error">{formErrors.multi}</div>}
+      {isError && <div className="text-error">{formErrors.multi}</div>}
     </div>
   );
 };

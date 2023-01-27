@@ -6,17 +6,17 @@ import { QuestionHeading } from "../Quiz/Headings/QuestionHeading";
 
 
 export const LikertScale = ({opt, name, label}) => {
-  const {formValues, setFormValues, formErrors} = useContext(FormContext);
+  const {formValues, setFormValues, formErrors, setIsMarked, isError} = useContext(FormContext);
 
   const [ listIndex, setListIndex ] = useState({});
 
   const handleChange = (evt, value) => {
-    setFormValues({...formValues, mcq: value})
+    setFormValues({...formValues, likert: value})
   };
   return (
     <div className="mb-5 mt-2">
       <QuestionHeading text={label} />
-      {formErrors.mcq && <div className="text-error">{formErrors.mcq}</div>}
+      {isError && <div className="text-error">{formErrors.likert}</div>}
 
     <div className="flex flex-row items-center ">
       <text className="text-button mr-2 ">Strongly Disagree</text>
@@ -26,7 +26,9 @@ export const LikertScale = ({opt, name, label}) => {
            
             handleChange(e, item.value);
             setListIndex(val)
+            setIsMarked(true);
 
+            
           }}
           key={val}
         >
