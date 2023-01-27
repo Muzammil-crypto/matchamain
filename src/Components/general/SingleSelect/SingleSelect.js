@@ -15,7 +15,7 @@ export const SingleSelect = ({ options, name, label, child }) => {
     console.log({'ALL OPTIONS:': formValues.myData});
     value==='Yes'?
     showChildren():value==='No'&&setShowChild(false)
-
+ console.log("MY VALUES:",formValues.myData)
   };
 const showChildren =()=> {
   child?
