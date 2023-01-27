@@ -83,7 +83,7 @@ export const QuizForm = () => {
               if (item.type === "option") {
                 return (
                   <div className="mt-20" key={val}>
-                    <QuestionHeading color={"text-black"} key={val} text={item.question} />
+                    <QuestionHeading size={"text-lgx"} color={"text-black"} key={val} text={item.question} />
 
                     <SingleSelect
                       label={item.select}
@@ -95,7 +95,7 @@ export const QuizForm = () => {
               } else if (item.type === "select") {
                 return (
                   <div className="mt-20" key={val}>
-                    <QuestionHeading color={"text-black"} key={val} text={item.question} />
+                    <QuestionHeading size={"text-lgx"} color={"text-black"} key={val} text={item.question} />
 
                     <CustomSelect
                       label="Job Type"
@@ -119,7 +119,7 @@ export const QuizForm = () => {
               } else if (item.type === "mcq") {
                 return (
                   <div className="mt-20" key={val}>
-                    <QuestionHeading color={"text-black"} key={val} text={item.question} />
+                    <QuestionHeading size={"text-lgx"} color={"text-black"} key={val} text={item.question} />
                     <LikertScale
                     label={item.select}
                     opt={item.options}
@@ -129,7 +129,7 @@ export const QuizForm = () => {
               } else if (item.type === "multi") {
                 return (
                   <div className="mt-20" key={val}>
-                    <QuestionHeading color={"text-black"} key={val} text={item.question} />
+                    <QuestionHeading size={"text-lgx"} color={"text-black"} key={val} text={item.question} />
                     <MultiSelect
                       label={"Select any"}
                       choices={item?.options}
@@ -141,7 +141,7 @@ export const QuizForm = () => {
               } else if (item.type === "input") {
                 return (
                   <div className="mt-20" key={val}>
-                    <QuestionHeading color={"text-black"} key={val} text={item.question} />
+                    <QuestionHeading size={"text-lgx"} color={"text-black"} key={val} text={item.question} />
                     <CustomInputField
                       label="Write below "
                       name="name"
@@ -159,7 +159,6 @@ export const QuizForm = () => {
               type="submit"
               text={"Next"}
               onClick={() => {
-                console.log('===>> hello')
                 if(step < questions.length-1 && isMarked===true)
                 {
                   setIsMarked(false)

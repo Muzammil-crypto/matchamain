@@ -20,7 +20,7 @@ export const MultiSelect = ({ name, label, choices, ...props }) => {
     
     <div className="w-96 mb-20">
   
-  <QuestionHeading text={label} />
+  <QuestionHeading size={"text-lg"} text={label} />
       
   {isError && <div className="text-error">{formErrors.multi}</div>}
 

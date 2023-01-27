@@ -17,7 +17,7 @@ export const LikertScale = ({opt, name, label}) => {
   };
   return (
     <div className="mb-5 mt-2">
-      <QuestionHeading text={label} />
+      <QuestionHeading size={"text-lg"} text={label} />
       {isError && <div className="text-error">{formErrors.likert}</div>}
 
     <div className="flex flex-row items-center ">

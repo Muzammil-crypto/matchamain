@@ -20,7 +20,7 @@ export const SingleSelect = ({ options, name, label }) => {
 
   return (
     <div className="mb-5 mt-2">
-      <QuestionHeading text={label} />
+      <QuestionHeading size={"text-lg"} text={label} />
       {isError && <div className="text-error">{formErrors.mcq}</div>}
 
       {options.map((_, i) => {

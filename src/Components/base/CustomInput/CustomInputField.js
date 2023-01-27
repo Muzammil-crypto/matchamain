@@ -22,7 +22,7 @@ if(regex.test(value)){
   return (
 
     <div className="w-96 mb-20">
-     <QuestionHeading text={label} />
+     <QuestionHeading size={"text-lg"} text={label} />
      {formErrors.email && <div className="text-error">{formErrors.email
          }</div>}
       <input
