@@ -3,7 +3,6 @@ import { ButtonT } from "../../../Quiz/Components/base/Button/ButtonT";
 import { CustomInputField } from "../../base/CustomInput/CustomInputField";
 import { LikertScale } from "../LikertScale/LikertScale";
 import { MultiSelect } from "../MultiSelect/MultiSelect";
-import { CustomSelect } from "../Navbar/DropDown/Select";
 import { SingleSelect } from "../SingleSelect/SingleSelect";
 import {
   MdOutlineKeyboardArrowDown,
@@ -12,6 +11,7 @@ import {
 import { questions } from "../../../const/questions";
 import { QuestionHeading } from "./Headings/QuestionHeading";
 import { FormContext } from "../../../contexts/FormContext";
+import { CustomSelect } from "../DropDown/Select";
 
 export const QuizForm = () => {
 
@@ -156,6 +156,10 @@ export const QuizForm = () => {
 
           <div className="flex flex-row">
             <ButtonT
+              size={"text-lg"}
+              px={"px-4"}
+              py={"py-1"}
+              bold={"font-bold"}
               type="submit"
               text={"Next"}
               onClick={() => {

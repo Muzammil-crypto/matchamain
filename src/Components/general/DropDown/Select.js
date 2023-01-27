@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { FormContext } from "../../../../contexts/FormContext";
-import { QuestionHeading } from "../../Quiz/Headings/QuestionHeading";
+import { FormContext } from "../../../contexts/FormContext";
+import { QuestionHeading } from "../Quiz/Headings/QuestionHeading";
 
 export const CustomSelect = ({ label, ...props }) => {
   const {formErrors, isError} = useContext(FormContext);

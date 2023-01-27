@@ -1,8 +1,8 @@
 import React from "react";
 
-export const ButtonT = ({ text , ...props }) => {
+export const ButtonT = ({ text,size, px ,py,bold, ...props }) => {
   return (
-    <button    className="text-white text-lg rounded-full font-sans bg-button px-14 py-3 shadow-lg  " {...props} >
+    <button className={` ${px?px:"px-14" } ${py?py:" py-3"} ${size?size:"text-lg"} ${bold&&bold} text-white  rounded-full font-sans bg-button shadow-lg  `} {...props} >
       {text}
     </button>
   );

@@ -17,7 +17,7 @@ module.exports = {
     colors: {
       alphaBorder:"#5F6060",
       bg:'#D0C9FF',
-      border: '#5C46E5      ',
+      border: '#5C46E5',
       error: "red",
       button: "#545ADE",
       Radio: "#f0f0f0",

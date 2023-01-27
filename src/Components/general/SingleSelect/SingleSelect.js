@@ -6,14 +6,12 @@ import { QuestionHeading } from "../Quiz/Headings/QuestionHeading";
 export const SingleSelect = ({ options, name, label }) => {
   const [listIndex, setListIndex] = useState({});
 
-  const { formValues, setFormValues, formErrors, isMarked, setIsMarked,  showMessage, 
-    setShowMessage, isError } =
+  const { formValues, setFormValues, formErrors, isMarked, setIsMarked, isError } =
     useContext(FormContext);
 
   const handleChange = (evt, value) => {
     setFormValues({ ...formValues, mcq: value });
     formValues.myData.mcq.push(value);
-    // setFormValues({ ...formValues, mcq: "" });
     console.log({'ALL OPTIONS:': formValues.myData});
   };
 
