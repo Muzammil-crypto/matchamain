@@ -14,7 +14,7 @@ export const SingleSelect = ({ options, name, label, child }) => {
     formValues.myData.mcq.push(value);
     console.log({'ALL OPTIONS:': formValues.myData});
     value==='Yes'?
-    showChildren():""
+    showChildren():value==='No'&&setShowChild(false)
 
   };
 const showChildren =()=> {
