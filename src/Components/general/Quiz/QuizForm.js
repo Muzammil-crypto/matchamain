@@ -27,7 +27,9 @@ export const QuizForm = () => {
     isMarked, 
     setIsMarked,
     setIsError,
-    isError
+    isError,
+    showChild,
+
   } = useContext(FormContext);
   const handleChange = (e) => {
     
@@ -88,10 +90,10 @@ export const QuizForm = () => {
                     <SingleSelect
                       label={item.select}
                       options={item.options}
-                     
+                     child={item.child}
                 
                     />
-                    {item.child? item.children?.map((item, val) => {
+                    {showChild? item.children?.map((item, val) => {
                       return(
                         <>
                         <QuestionHeading size={"text-lgx"} color={"text-black"} key={val} text={item.question} />

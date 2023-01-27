@@ -6,7 +6,7 @@ import { QuestionHeading } from "../Quiz/Headings/QuestionHeading";
 export const SingleSelect = ({ options, name, label, child }) => {
   const [listIndex, setListIndex] = useState({});
 
-  const { formValues, setFormValues, formErrors, isMarked, setIsMarked, isError } =
+  const { formValues, setFormValues, formErrors, isMarked, setIsMarked, isError, showChild , setShowChild } =
     useContext(FormContext);
 
   const handleChange = (evt, value) => {
@@ -14,7 +14,10 @@ export const SingleSelect = ({ options, name, label, child }) => {
     formValues.myData.mcq.push(value);
     console.log({'ALL OPTIONS:': formValues.myData});
   };
-
+const showChildren =()=> {
+  child?
+setShowChild(true):""
+}
 
   return (
     <div className="mb-5 mt-2">
@@ -29,6 +32,7 @@ export const SingleSelect = ({ options, name, label, child }) => {
               handleChange(e, _.label);
               setListIndex(i);
              setIsMarked(true);
+              showChildren();
             }}
             className={`mt-2.5 bg-gray w-96 p-1.5 rounded-lg h-12 flex flex-row  align-middle  shadow-lg items-center ${
               listIndex === i && "border border-button"
