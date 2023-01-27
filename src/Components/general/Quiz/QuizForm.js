@@ -88,8 +88,30 @@ export const QuizForm = () => {
                     <SingleSelect
                       label={item.select}
                       options={item.options}
-
+                     
+                
                     />
+                    {item.child? item.children?.map((item, val) => {
+                      return(
+                        <>
+                        <QuestionHeading size={"text-lgx"} color={"text-black"} key={val} text={item.question} />
+                        <CustomSelect
+                          label={item.select}
+                          name="option"
+                          type="text"
+                          placeholder="Select The Job Type"
+                          onChange={handleChange}
+                        >
+                          {item.options.map((item, val) => (
+                            <option className=" bg-white text-white" key={val} value={item.value}>
+                              {item.label}
+                            </option>
+                          ))}
+                        </CustomSelect>
+                        </>
+                      );
+
+                    })  : ""}
                   </div>
                 );
               } else if (item.type === "select") {
@@ -98,7 +120,7 @@ export const QuizForm = () => {
                     <QuestionHeading size={"text-lgx"} color={"text-black"} key={val} text={item.question} />
 
                     <CustomSelect
-                      label="Job Type"
+                      label={item.select}
                       name="option"
                       type="text"
                       placeholder="Select The Job Type"

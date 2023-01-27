@@ -80,8 +80,8 @@ export const questions= [
       ],
       "required": true,
       "child": true,
-      "Children": {
-        "id": "0",
+      children: [
+       { "id": "0",
         "question": "Who is your insurance provider?",
         "type": "select",
         "select": "Select one",
@@ -93,8 +93,8 @@ export const questions= [
         { value: "Mza", label: "Mzamil" },
         { value: "mil", label: "MzamilMzamil" },
         ],
-        "required": "true"
-      }
+        "required": "true"}
+      ],
     },
     {
       "question": "What are you comfortable paying for each session?",

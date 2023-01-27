@@ -3,7 +3,7 @@ import { Alphabets } from "../../../const/texts";
 import { FormContext } from "../../../contexts/FormContext";
 import { QuestionHeading } from "../Quiz/Headings/QuestionHeading";
 
-export const SingleSelect = ({ options, name, label }) => {
+export const SingleSelect = ({ options, name, label, child }) => {
   const [listIndex, setListIndex] = useState({});
 
   const { formValues, setFormValues, formErrors, isMarked, setIsMarked, isError } =
@@ -18,7 +18,7 @@ export const SingleSelect = ({ options, name, label }) => {
 
   return (
     <div className="mb-5 mt-2">
-      <QuestionHeading size={"text-lg"} text={label} />
+      <QuestionHeading size={"text-lg"} text={child?.question} />
       {isError && <div className="text-error">{formErrors.mcq}</div>}
 
       {options.map((_, i) => {
