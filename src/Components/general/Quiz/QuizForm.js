@@ -35,7 +35,8 @@ export const QuizForm = () => {
     
     const { option, value } = e.target;
     setFormValues({ ...formValues, option: value });
-    formValues.myData.option.push(value);
+    formValues.AllData.push(value);
+    console.log("MINE DATA"+ formValues.AllData);
 
     setIsMarked(true)
 

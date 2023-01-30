@@ -10,13 +10,8 @@ export default function Quiz() {
     option: "",
     multi: [],
     likert: "",
-    myData: {
-      email: [],
-      mcq: [],
-      option: [],
-      multi: [],
-      likert: [],
-    },
+    AllData: [],
+  
   };
   const [showChild, setShowChild] = useState(false);
   const [showMessage, setShowMessage] = useState(false);

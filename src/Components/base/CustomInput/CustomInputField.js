@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import * as yup from "yup";
 import { FormContext } from "../../../contexts/FormContext";
 import { QuestionHeading } from "../../general/Quiz/Headings/QuestionHeading";
 
@@ -14,7 +13,7 @@ export const CustomInputField = ({ label, ...props }) => {
 
     console.log(formValues)
 if(regex.test(value)){
-  formValues.myData.email.push(value);
+  formValues.AllData.push(value);
   setIsMarked(true)
 }
 

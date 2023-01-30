@@ -11,7 +11,7 @@ export const MultiSelect = ({ name, label, choices, ...props }) => {
   function handleSelect(data) {
     setSelectedOptions(data);
     setFormValues({...formValues, multi: selectedOptions})
-    formValues.myData.multi.push(data);
+    formValues.AllData.push(data);
 
     setIsMarked(true);
   }

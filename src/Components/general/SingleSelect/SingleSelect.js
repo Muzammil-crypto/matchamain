@@ -11,11 +11,10 @@ export const SingleSelect = ({ options, name, label, child }) => {
 
   const handleChange = (evt, value) => {
     setFormValues({ ...formValues, mcq: value });
-    formValues.myData.mcq.push(value);
-    console.log({'ALL OPTIONS:': formValues.myData});
+    formValues.AllData.push(value);
     value==='Yes'?
     showChildren():value==='No'&&setShowChild(false)
- console.log("MY VALUES:",formValues.myData)
+ console.log("MY VALUES:",formValues.AllData)
   };
 const showChildren =()=> {
   child?
