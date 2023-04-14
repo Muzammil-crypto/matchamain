@@ -1,444 +1,564 @@
-export const questions= [
-    {
-      question: "What kind of therapy are you looking for?",
-      id: 0,
-      select: "Select one",
-      type: "option",
-      options: [
-        { value: "mujahid", label: "Mujahid" },
-        { value: "mzamil", label: "Mzamil" },
-        { value: "MLamil", label: "Mzamil" },
-        { value: "Mail", label: "Mzamil" },
-        { value: "Mza", label: "Mzamil" },
-        { value: "mil", label: "MzamilMzamil" },
-      ],
-    },
-    {
-      "question": "How do you prefer your therapist identify as?",
-      "id": 1,
-      "select": "Select one",
-      "type": "option",
-      options: [
-        { value: "mujahid", label: "Mujahid" },
-        { value: "mzamil", label: "Mzamil" },
-        { value: "MLamil", label: "Mzamil" },
-        { value: "Mail", label: "Mzamil" },
-        { value: "Mza", label: "Mzamil" },
-        { value: "mil", label: "MzamilMzamil" },
-      ],
-      "required": true
-    },
-    {
-      "question": "Which do you prefer your therapist identify as?",
-      "id": 2,
-      "select": "Select one",
-      "type": "option",
-      options: [
-        { value: "mujahid", label: "Mujahid" },
-        { value: "mzamil", label: "Mzamil" },
-        { value: "MLamil", label: "Mzamil" },
-        { value: "Mail", label: "Mzamil" },
-        { value: "Mza", label: "Mzamil" },
-        { value: "mil", label: "MzamilMzamil" },
-      ],
-      "required": true
-    },
-    {
-      "question": "Do you have an age preference for your therapist?",
-      "id": 3,
-      "select": "Select one",
-      "type": "option",
-      options: [
-        { value: "mujahid", label: "Mujahid" },
-        { value: "mzamil", label: "Mzamil" },
-        { value: "MLamil", label: "Mzamil" },
-        { value: "Mail", label: "Mzamil" },
-        { value: "Mza", label: "Mzamil" },
-        { value: "mil", label: "MzamilMzamil" },
-      ],
-      "required": true
-    },
-    {
-      "question": "How important is your therapist’s gender, sexual,ethnic, religious or political identity?",
-      "id": 4,
-      "select": "Select one",
-      "type": "option",
-      "options": [
-        { "value": "0", "label": "Important" },
-        { "value": "1", "label": "Not Important" }
-      ],
-      "required": true
-    },
-    {
-      "question": "Would you like to use insurance for therapy?",
-      "id": 5,
-      "select": "Select one",
-      "type": "option",
-      "options": [
-        { "value": "0", "label": "Yes" },
-        { "value": "1", "label": "No" }
-      ],
-      "required": true,
-      "child": true,
-      children: [
-       { "id": "0",
-        "question": "Who is your insurance provider?",
-        "type": "select",
-        "select": "Select one",
+export const questions = [
+  {
+    question: "What kind of therapy are you looking for?",
+    id: 0,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "cognitive", label: "Cognitive Behavioral Therapy (CBT)" },
+      { value: "psychodynamic", label: "Psychodynamic Therapy" },
+      { value: "humanistic", label: "Humanistic Therapy" },
+      { value: "integrative", label: "Integrative Therapy" },
+      { value: "existential", label: "Existential Therapy" },
+      { value: "mindfulness", label: "Mindfulness-Based Therapy" },
+    ],
+  },
+  {
+    question: "How do you prefer your therapist identify as?",
+    id: 1,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "male", label: "Male" },
+      { value: "female", label: "Female" },
+      { value: "nonbinary", label: "Nonbinary" },
+      { value: "any", label: "Any" },
+    ],
+    required: true,
+  },
+  {
+    question: "Which ethnicity do you prefer your therapist identify as?",
+    id: 2,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "white", label: "White" },
+      { value: "black", label: "Black" },
+      { value: "hispanic", label: "Hispanic/Latinx" },
+      { value: "asian", label: "Asian" },
+      { value: "native", label: "Native American/Indigenous" },
+      { value: "middle-eastern", label: "Middle Eastern/North African" },
+      { value: "multiracial", label: "Multiracial" },
+      { value: "other", label: "Other" },
+      { value: "any", label: "Any" },
+    ],
+    required: true,
+  },
+  {
+    question: "Do you have an age preference for your therapist?",
+    id: 3,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "18-30", label: "18-30" },
+      { value: "31-45", label: "31-45" },
+      { value: "46-60", label: "46-60" },
+      { value: "60+", label: "60+" },
+      { value: "any", label: "Any" },
+    ],
+    required: true,
+  },
+  {
+    question:
+      "How important is your therapist’s gender, sexual,ethnic, religious or political identity?",
+    id: 4,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "very", label: "Very important" },
+      { value: "somewhat", label: "Somewhat important" },
+      { value: "not", label: "Not important" },
+    ],
+    required: true,
+  },
+  // {
+  //   question:
+  //     "How important is your therapist’s gender, sexual,ethnic, religious or political identity?",
+  //   id: 4,
+  //   select: "Select one",
+  //   type: "option",
+  //   options: [
+  //     { value: "0", label: "Important" },
+  //     { value: "1", label: "Not Important" },
+  //   ],
+  //   required: true,
+  // },
+  {
+    question: "Would you like to use insurance for therapy?",
+    id: 5,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "0", label: "Yes" },
+      { value: "1", label: "No" },
+    ],
+    required: true,
+    child: true,
+    children: [
+      {
+        id: "0",
+        question: "Who is your insurance provider?",
+        type: "select",
+        select: "Select one",
         options: [
-        { value: "mujahid", label: "Mujahid" },
-        { value: "mzamil", label: "Mzamil" },
-        { value: "MLamil", label: "Mzamil" },
-        { value: "Mail", label: "Mzamil" },
-        { value: "Mza", label: "Mzamil" },
-        { value: "mil", label: "MzamilMzamil" },
+          { value: "state_farm", label: "State Farm" },
+          { value: "geico", label: "Geico" },
+          { value: "progressive", label: "Progressive" },
+          { value: "allstate", label: "Allstate" },
+          { value: "nationwide", label: "Nationwide" },
+          { value: "farmers_insurance", label: "Farmers Insurance" },
         ],
-        "required": "true"}
-      ],
-    },
-    {
-      "question": "What are you comfortable paying for each session?",
-      "id": 6,
-      "select": "Select one",
-      "type": "option",
-      options: [
-        { value: "mujahid", label: "Mujahid" },
-        { value: "mzamil", label: "Mzamil" },
-        { value: "MLamil", label: "Mzamil" },
-        { value: "Mail", label: "Mzamil" },
-        { value: "Mza", label: "Mzamil" },
-        { value: "mil", label: "MzamilMzamil" },
-      ],
-      "required": true
-    },
-    {
-      "question": "What state are you in?",
-      "id": 7,
-      "select": "Select one",
-      "type": "select",
-      "placeholder": "Select State",
-      "options": [
-        { "id": "0", "label": "Florida", "value": "Florida" },
-        { "id": "1", "label": "California", "value": "California" },
-        { "id": "2", "label": "Alaska", "value": "Alaska" },
-        { "id": "3", "label": "Texas", "value": "Texas" },
-        { "id": "4", "label": "Ohio", "value": "Ohio" },
-        { "id": "5", "label": "Hawaii", "value": "Hawaii" }
-      ],
-      "required": true
-    },
-    {
-      "question": "What's your email?",
-      "id": 8,
-      "select": "Select one",
-      "type": "input",
-      "placeholder": "hello@gmail.com",
-      "required": true
-    },
-    {
-      "question": "We found some matches. Do you want to see them or move on to our personality questions �for more accurate results?",
-      "id": 9,
-      "select": "Select one",
-      "type": "option",
-      "options": [
-        { "value": "0", "label": "Let’s see some therapists! " },
-        { "value": "1", "label": "Let’s get to know each other better" }
-      ],
-      "required": true
-    },
-    {
-      "question": "My Future...?",
-      "id": 10,
-      "select": "Select one",
-      "type": "option",
-      "options": [
-        { "value": "0", "label": "Is looking good!" },
-        { "value": "1", "label": "Isn't so clear to me" },
-        { "value": "2", "label": "Looking like it can get bad" },
-        { "value": "3", "label": "Really Sucks" }
-      ],
-      "required": true
-    },
-    {
-      "question": "Are you the nervous type?",
-      "id": 11,
-      "select": "Select one",
-      "type": "option",
-      "options": [
-        { "value": "0", "label": "Is looking good!" },
-        { "value": "1", "label": "Isn't so clear to me" },
-        { "value": "2", "label": "Looking like it can get bad" },
-        { "value": "3", "label": "Really Sucks" }
-      ],
-      "required": true
-    },
-    {
-      "question": "How tired are you?",
-      "id": 12,
-      "select": "Select one",
-      "type": "option",
-      options: [
-        { value: "mujahid", label: "Mujahid" },
-        { value: "mzamil", label: "Mzamil" },
-        { value: "MLamil", label: "Mzamil" },
-        { value: "Mail", label: "Mzamil" },
-        { value: "Mza", label: "Mzamil" },
-        { value: "mil", label: "MzamilMzamil" },
-      ],
-      "required": true
-    },
-    {
-      "question": "If you had to solve a puzzle during an �interview to get your dream job..",
-      "id": 13,
-      "select": "Select one",
-      "type": "option",
-      options: [
-        { value: "mujahid", label: "Mujahid" },
-        { value: "mzamil", label: "Mzamil" },
-        { value: "MLamil", label: "Mzamil" },
-        { value: "Mail", label: "Mzamil" },
-        { value: "Mza", label: "Mzamil" },
-        { value: "mil", label: "MzamilMzamil" },
-      ],
-      "required": true
-    },
-    {
-      "question": "How often do you feel lonely?",
-      "id": 14,
-      "select": "Select one",
-      "type": "option",
-      options: [
-        { value: "mujahid", label: "Mujahid" },
-        { value: "mzamil", label: "Mzamil" },
-        { value: "MLamil", label: "Mzamil" },
-        { value: "Mail", label: "Mzamil" },
-        { value: "Mza", label: "Mzamil" },
-        { value: "mil", label: "MzamilMzamil" },
-      ],
-      "required": true
-    },
-    {
-      "question": "How long before you download �the next trending app?",
-      "id": 15,
-      "select": "Select one",
-      "type": "option",
-      options: [
-        { value: "mujahid", label: "Mujahid" },
-        { value: "mzamil", label: "Mzamil" },
-        { value: "MLamil", label: "Mzamil" },
-        { value: "Mail", label: "Mzamil" },
-        { value: "Mza", label: "Mzamil" },
-        { value: "mil", label: "MzamilMzamil" },
-      ],
-      "required": true
-    },
-    {
-      "question": "How do you feel about someone who has sex�on the first date with someone they met online?",
-      "id": 16,
-      "select": "Select one",
-      "type": "option",
-      options: [
-        { value: "mujahid", label: "Mujahid" },
-        { value: "mzamil", label: "Mzamil" },
-        { value: "MLamil", label: "Mzamil" },
-        { value: "Mail", label: "Mzamil" },
-        { value: "Mza", label: "Mzamil" },
-        { value: "mil", label: "MzamilMzamil" },
-      ],
-      "required": true
-    },
-    {
-      "question": "If you were stuck in an elevator, who�would you rather speak with?",
-      "id": 17,
-      "select": "Select one",
-      "type": "option",
-      options: [
-        { value: "mujahid", label: "Mujahid" },
-        { value: "mzamil", label: "Mzamil" },
-        { value: "MLamil", label: "Mzamil" },
-        { value: "Mail", label: "Mzamil" },
-        { value: "Mza", label: "Mzamil" },
-        { value: "mil", label: "MzamilMzamil" },
-      ],
-      "required": true
-    },
-    {
-      "question": "What excites you the most?",
-      "id": 18,
-      "select": "Select one",
-      "type": "option",
-      options: [
-        { value: "mujahid", label: "Mujahid" },
-        { value: "mzamil", label: "Mzamil" },
-        { value: "MLamil", label: "Mzamil" },
-        { value: "Mail", label: "Mzamil" },
-        { value: "Mza", label: "Mzamil" },
-        { value: "mil", label: "MzamilMzamil" },
-      ],
-      "required": true
-    },
-    {
-      "question": "What communication style do you like the most?",
-      "id": 19,
-      "select": "Select one",
-      "type": "option",
-      options: [
-        { value: "mujahid", label: "Mujahid" },
-        { value: "mzamil", label: "Mzamil" },
-        { value: "MLamil", label: "Mzamil" },
-        { value: "Mail", label: "Mzamil" },
-        { value: "Mza", label: "Mzamil" },
-        { value: "mil", label: "MzamilMzamil" },
-      ],
-      "required": true
-    },
-    {
-      question: "I’m kind to people even if they’ve betrayed me.",
-      id: 20,
-      select: "Select one",
-      type: "mcq",
-      options :[
-        {
-          value: 1,
-          label: 'one'
-        },
-        {
-          value: 2,
-          label: 'two'
-        }, {
-          value: 3,
-          label: 'three'
-        }, {
-          value: 4,
-          label: 'four'
-        }, {
-          value: 5,
-          label: 'five'
-        },
-       
-      ],
-      required: true
-    },
-    {
-      "question": "I really like being prepared for every�single activity in my life",
-      "id": 21,
-      "select": "Select one",
-      "type": "mcq",
-      options :[
-        {
-          value: 1,
-          label: 'one'
-        },
-        {
-          value: 2,
-          label: 'two'
-        }, {
-          value: 3,
-          label: 'three'
-        }, {
-          value: 4,
-          label: 'four'
-        }, {
-          value: 5,
-          label: 'five'
-        },
-       
-      ],
-      "required": true
-    },
-    {
-      "question": "Meeting new people at parties excites me...",
-      "id": 22,
-      "select": "Select one",
-      "type": "mcq",
-      options :[
-        {
-          value: 1,
-          label: 'one'
-        },
-        {
-          value: 2,
-          label: 'two'
-        }, {
-          value: 3,
-          label: 'three'
-        }, {
-          value: 4,
-          label: 'four'
-        }, {
-          value: 5,
-          label: 'five'
-        },
-       
-      ],
-      "required": true
-    },
-    {
-      "question": "I’m always curious to learn about other people’s opinions, even if they upset me...",
-      "id": 23,
-      "select": "Select one",
-      "type": "mcq",
-      options :[
-        {
-          value: 1,
-          label: 'one'
-        },
-        {
-          value: 2,
-          label: 'two'
-        }, {
-          value: 3,
-          label: 'three'
-        }, {
-          value: 4,
-          label: 'four'
-        }, {
-          value: 5,
-          label: 'five'
-        },
-       
-      ],
-      "required": true
-    },
-    {
-      "question": "I can stay composed even when being verbally criticized...",
-      "id": 24,
-      "select": "Select one",
-      "type": "mcq",
-      options :[
-        {
-          value: 1,
-          label: 'one'
-        },
-        {
-          value: 2,
-          label: 'two'
-        }, {
-          value: 3,
-          label: 'three'
-        }, {
-          value: 4,
-          label: 'four'
-        }, {
-          value: 5,
-          label: 'five'
-        },
-       
-      ],
-      "required": true
-    },
-    {
-      "question": "What issues are you facing?",
-      "id": 25,
-      "select": "Select one",
-      "type": "multi",
-      "placeholder": "Select State",
-      options : [
-        { name: "multiselect-ract-dropdo", id: 0 },
-        { name: "multiselect-reropdo", id: 1 },
-        { name: "multiselecteact-dropdo", id: 2 },
-        { name: "multi-react-dropdo", id: 3 },
-      ],
-      "required": true
-    }
-  ]
+        required: "true",
+      },
+    ],
+  },
+  {
+    question: "What are you comfortable paying for each session?",
+    id: 6,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "50", label: "$50 or less" },
+      { value: "75", label: "$75 or less" },
+      { value: "100", label: "$100 or less" },
+      { value: "150", label: "$150 or less" },
+      { value: "200", label: "$200 or less" },
+      { value: "250", label: "$250 or less" },
+    ],
+    required: true,
+  },
+  {
+    question: "What state are you in?",
+    id: 7,
+    select: "Select one",
+    type: "select",
+    placeholder: "Select State",
+    options: [
+      { id: "0", label: "Florida", value: "Florida" },
+      { id: "1", label: "California", value: "California" },
+      { id: "2", label: "Alaska", value: "Alaska" },
+      { id: "3", label: "Texas", value: "Texas" },
+      { id: "4", label: "Ohio", value: "Ohio" },
+      { id: "5", label: "Hawaii", value: "Hawaii" },
+    ],
+    required: true,
+  },
+  {
+    question: "What's your email?",
+    id: 8,
+    select: "Select one",
+    type: "input",
+    placeholder: "hello@gmail.com",
+    required: true,
+  },
+  {
+    question:
+      "We found some matches. Do you want to see them or move on to our personality questions �for more accurate results?",
+    id: 9,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "0", label: "Let’s see some therapists! " },
+      { value: "1", label: "Let’s get to know each other better" },
+    ],
+    required: true,
+  },
+  {
+    question: "My Future...?",
+    id: 10,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "0", label: "Is looking good!" },
+      { value: "1", label: "Isn't so clear to me" },
+      { value: "2", label: "Looking like it can get bad" },
+      { value: "3", label: "Really Sucks" },
+    ],
+    required: true,
+  },
+  {
+    question: "Are you the nervous type?",
+    id: 11,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "0", label: "Is looking good!" },
+      { value: "1", label: "Isn't so clear to me" },
+      { value: "2", label: "Looking like it can get bad" },
+      { value: "3", label: "Really Sucks" },
+    ],
+    required: true,
+  },
+  {
+    question: "How tired are you?",
+    id: 12,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "not_at_all_tired", label: "Not at all tired" },
+      { value: "slightly_tired", label: "Slightly tired" },
+      { value: "moderately_tired", label: "Moderately tired" },
+      { value: "very_tired", label: "Very tired" },
+      { value: "completely_exhausted", label: "Completely exhausted" },
+    ],
+    required: true,
+  },
+  {
+    question:
+      "If you had to solve a puzzle during an �interview to get your dream job..",
+    id: 13,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "excited", label: "Excited" },
+      { value: "confident", label: "Confident" },
+      { value: "nervous", label: "Nervous" },
+      { value: "frustrated", label: "Frustrated" },
+      { value: "disappointed", label: "Disappointed" },
+    ],
+    required: true,
+  },
+  {
+    question: "How often do you feel lonely?",
+    id: 14,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "never", label: "Never" },
+      { value: "rarely", label: "Rarely" },
+      { value: "sometimes", label: "Sometimes" },
+      { value: "often", label: "Often" },
+      { value: "always", label: "Always" },
+    ],
+    required: true,
+  },
+  {
+    question: "How long before you download the next trending app?",
+    id: 15,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "immediately", label: "Immediately" },
+      { value: "within a week", label: "Within a week" },
+      { value: "within a month", label: "Within a month" },
+      { value: "within a year", label: "Within a year" },
+      { value: "never", label: "Never" },
+    ],
+    required: true,
+  },
+  {
+    question:
+      "How do you feel about someone who has sex on the first date with someone they met online?",
+    id: 16,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "positive", label: "Positive" },
+      { value: "neutral", label: "Neutral" },
+      { value: "negative", label: "Negative" },
+    ],
+    required: true,
+  },
+  {
+    question:
+      "If you were stuck in an elevator, who would you rather speak with?",
+    id: 17,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "a stranger", label: "A stranger" },
+      { value: "a friend", label: "A friend" },
+      { value: "a celebrity", label: "A celebrity" },
+      { value: "nobody", label: "Nobody" },
+    ],
+    required: true,
+  },
+  {
+    question: "What excites you the most?",
+    id: 18,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "Traveling", label: "Traveling" },
+      { value: "Trying new foods", label: "Trying new foods" },
+      { value: "Learning new things", label: "Learning new things" },
+      { value: "Meeting new people", label: "Meeting new people" },
+      { value: "Achieving goals", label: "Achieving goals" },
+    ],
+    required: true,
+  },
+  {
+    question: "What communication style do you like the most?",
+    id: 19,
+    select: "Select one",
+    type: "option",
+    options: [
+      { value: "Direct", label: "Direct" },
+      { value: "Passive", label: "Passive" },
+      { value: "Assertive", label: "Assertive" },
+      { value: "Passionate", label: "Passionate" },
+      { value: "Humorous", label: "Humorous" },
+    ],
+    required: true,
+  },
+  {
+    question: "I’m kind to people even if they’ve betrayed me.",
+    id: 20,
+    select: "Select one",
+    type: "mcq",
+    options: [
+      {
+        value: 1,
+        label: "one",
+      },
+      {
+        value: 2,
+        label: "two",
+      },
+      {
+        value: 3,
+        label: "three",
+      },
+      {
+        value: 4,
+        label: "four",
+      },
+      {
+        value: 5,
+        label: "five",
+      },
+    ],
+    required: true,
+  },
+  {
+    question:
+      "I really like being prepared for every�single activity in my life",
+    id: 21,
+    select: "Select one",
+    type: "mcq",
+    options: [
+      {
+        value: 1,
+        label: "one",
+      },
+      {
+        value: 2,
+        label: "two",
+      },
+      {
+        value: 3,
+        label: "three",
+      },
+      {
+        value: 4,
+        label: "four",
+      },
+      {
+        value: 5,
+        label: "five",
+      },
+    ],
+    required: true,
+  },
+  {
+    question: "Meeting new people at parties excites me...",
+    id: 22,
+    select: "Select one",
+    type: "mcq",
+    options: [
+      {
+        value: 1,
+        label: "one",
+      },
+      {
+        value: 2,
+        label: "two",
+      },
+      {
+        value: 3,
+        label: "three",
+      },
+      {
+        value: 4,
+        label: "four",
+      },
+      {
+        value: 5,
+        label: "five",
+      },
+    ],
+    required: true,
+  },
+  {
+    question:
+      "I’m always curious to learn about other people’s opinions, even if they upset me...",
+    id: 23,
+    select: "Select one",
+    type: "mcq",
+    options: [
+      {
+        value: 1,
+        label: "one",
+      },
+      {
+        value: 2,
+        label: "two",
+      },
+      {
+        value: 3,
+        label: "three",
+      },
+      {
+        value: 4,
+        label: "four",
+      },
+      {
+        value: 5,
+        label: "five",
+      },
+    ],
+    required: true,
+  },
+  {
+    question: "I can stay composed even when being verbally criticized...",
+    id: 24,
+    select: "Select one",
+    type: "mcq",
+    options: [
+      {
+        value: 1,
+        label: "one",
+      },
+      {
+        value: 2,
+        label: "two",
+      },
+      {
+        value: 3,
+        label: "three",
+      },
+      {
+        value: 4,
+        label: "four",
+      },
+      {
+        value: 5,
+        label: "five",
+      },
+    ],
+    required: true,
+  },
+  {
+    id: 25,
+    question: "What issues are you facing related to your mental health?",
+    type: "multi",
+    placeholder: "Select all that apply",
+    options: [
+      { id: "0", name: "Depression" },
+      { id: "1", name: "Anxiety" },
+      { id: "2", name: "Stress" },
+      { id: "3", name: "Trauma" },
+      { id: "4", name: "Addiction" },
+      { id: "5", name: "Eating disorders" },
+    ],
+    required: true,
+  },
+  {
+    id: 26,
+    question: "What issues are you facing related to your physical health?",
+    type: "multi",
+    placeholder: "Select all that apply",
+    options: [
+      { id: "0", name: "Chronic pain" },
+      { id: "1", name: "Fatigue" },
+      { id: "2", name: "Digestive issues" },
+      { id: "3", name: "Sleep problems" },
+      { id: "4", name: "Injuries" },
+      { id: "5", name: "Other" },
+    ],
+    required: true,
+  },
+  {
+    id: 27,
+    question: "What issues are you facing related to your social health?",
+    type: "multi",
+    placeholder: "Select all that apply",
+    options: [
+      { id: "0", name: "Relationship issues" },
+      { id: "1", name: "Family issues" },
+      { id: "2", name: "Friendship issues" },
+      { id: "3", name: "Work issues" },
+      { id: "4", name: "Other" },
+    ],
+    required: true,
+  },
+  {
+    id: 28,
+    question: "What issues are you facing related to your spiritual health?",
+    type: "multi",
+    placeholder: "Select all that apply",
+    options: [
+      { id: "0", name: "Lack of purpose" },
+      { id: "1", name: "Lack of meaning" },
+      { id: "2", name: "Lack of connection" },
+      { id: "3", name: "Lack of faith" },
+      { id: "4", name: "Other" },
+    ],
+  },
+  {
+    id: 29,
+    question: "What issues are you facing related to your financial health?",
+    type: "multi",
+    placeholder: "Select all that apply",
+    options: [
+      { id: "0", name: "Debt" },
+      { id: "1", name: "Lack of savings" },
+      { id: "2", name: "Lack of financial security" },
+      { id: "3", name: "Other" },
+    ],
+    required: true,
+  },
+  {
+    id: 30,
+    question:
+      "What issues are you facing related to your environmental health?",
+    type: "multi",
+    placeholder: "Select all that apply",
+    options: [
+      { id: "0", name: "Lack of access to healthy food" },
+      { id: "1", name: "Lack of access to clean water" },
+      { id: "2", name: "Lack of access to clean air" },
+      { id: "3", name: "Lack of access to green spaces" },
+      { id: "4", name: "Other" },
+    ],
+    required: true,
+  },
+  {
+    id: 31,
+    question: "What issues are you facing related to your emotional health?",
+    type: "multi",
+    placeholder: "Select all that apply",
+    options: [
+      { id: "0", name: "Lack of self-esteem" },
+      { id: "1", name: "Lack of self-confidence" },
+      { id: "2", name: "Lack of self-compassion" },
+      { id: "3", name: "Lack of self-love" },
+      { id: "4", name: "Other" },
+    ],
+    required: true,
+  },
+  {
+    id: 32,
+    question: "What issues are you facing related to your intellectual health?",
+    type: "multi",
+    placeholder: "Select all that apply",
+    options: [
+      { id: "0", name: "Lack of curiosity" },
+      { id: "1", name: "Lack of creativity" },
+      { id: "2", name: "Lack of imagination" },
+      { id: "3", name: "Lack of critical thinking" },
+      { id: "4", name: "Other" },
+    ],
+    required: true,
+  },
+];
