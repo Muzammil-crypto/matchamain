@@ -1,6 +1,5 @@
 import React from "react";
 import style from "../Hero/styles/styles.module.scss";
-import styles from "../../../Styles/Home.module.scss";
 import { Heading } from "./Heading";
 import { HeroImage } from "./HeroImage";
 import { SlugLine } from "./SlugLine";
